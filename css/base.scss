@@ -95,6 +95,10 @@ body.desktop {
 		a:hover {
 			color: $teal-lgt;
 		}
+
+		a.active:hover {
+			color: $blueGray-drk;
+		}
 	}
 }
 
@@ -130,6 +134,13 @@ body.light {
 ========================================================================== */
 #nav-bar {
 	background: $blueGray-drk;
+
+	nav {
+		a.active {
+			background: $teal-lgt;
+			color: $blueGray-drk;
+		}
+	}
 }
 
 

@@ -22,7 +22,7 @@ app.config(function($routeProvider) {
   	templateUrl: 'app/code/_code.html',
     controller: 'CodeCtrl as code'
 
-  }).when('/bio', {
+  }).when('/about', {
   	templateUrl: 'app/about/_about.html',
     controller: 'AboutCtrl as about'
 
@@ -48,14 +48,28 @@ app.factory('Init', function() {
 				return this.bgColor = 'dark';
 			}
 		},
+
+    nav: [
+      {label: 'home', bgColor: 'dark'},
+      {label: 'design', bgColor: 'light'},
+      {label: 'code', bgColor: 'light'},
+      {label: 'about', bgColor: 'dark'},
+      {label: 'contact', bgColor: 'dark'},
+    ]
 	}
 });
 
 
 // detect device
-app.controller('IndexCtrl', function(deviceDetector) {
+app.controller('IndexCtrl', function(Init, deviceDetector, $location) {
+  this.nav = Init.nav;
+
   if( deviceDetector.device == 'unknown' ) {
     this.desktop = true;
+  }
+
+  this.setActive = function(path) {
+    return path === $location.path();
   }
 });
 

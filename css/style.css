@@ -61,6 +61,8 @@ body.desktop nav a {
   color: #e0e0e0; }
 body.desktop nav a:hover {
   color: #1ce8b5; }
+body.desktop nav a.active:hover {
+  color: #253137; }
 
 /* ==========================================================================
    dark bg
@@ -85,5 +87,8 @@ body.light {
 ========================================================================== */
 #nav-bar {
   background: #253137; }
+  #nav-bar nav a.active {
+    background: #1ce8b5;
+    color: #253137; }
 
 /*# sourceMappingURL=style.css.map */
