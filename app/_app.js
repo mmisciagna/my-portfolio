@@ -36,31 +36,19 @@ app.config(function($routeProvider) {
 });
 
 
-// gives body element class of 'dark' or 'light'
 app.factory('Init', function() {
 	return {
-		bgColor: undefined,
-
-		setBgColor: function(color) {
-			if( color == 'light' ) {
-				return this.bgColor = color;
-			} else {
-				return this.bgColor = 'dark';
-			}
-		},
-
     nav: [
-      {label: 'home', bgColor: 'dark'},
-      {label: 'design', bgColor: 'light'},
-      {label: 'code', bgColor: 'light'},
-      {label: 'about', bgColor: 'dark'},
-      {label: 'contact', bgColor: 'dark'},
+      {label:'home'},
+      {label:'design'},
+      {label:'code'},
+      {label:'about'},
+      {label:'contact'},
     ]
 	}
 });
 
 
-// detect device
 app.controller('IndexCtrl', function(Init, deviceDetector, $location) {
   this.nav = Init.nav;
 

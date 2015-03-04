@@ -1,6 +1,5 @@
 var about = angular.module('about', []);
 
-home.controller('AboutCtrl', function(Init, $rootScope) {
-	Init.setBgColor('dark');
-	$rootScope.bgColor = Init.bgColor;
+home.controller('AboutCtrl', function($rootScope) {
+	$rootScope.bgColor = 'dark';
 });
