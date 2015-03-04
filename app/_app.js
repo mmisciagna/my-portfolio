@@ -36,26 +36,23 @@ app.config(function($routeProvider) {
 });
 
 
-app.factory('Init', function() {
-	return {
-    nav: [
-      {label:'home'},
-      {label:'design'},
-      {label:'code'},
-      {label:'about'},
-      {label:'contact'},
-    ]
-	}
-});
 
+app.controller('IndexCtrl', function(deviceDetector, $location) {
+  // set nav
+  this.nav = [
+    {label:'home'},
+    {label:'design'},
+    {label:'code'},
+    {label:'about'},
+    {label:'contact'}
+  ]
 
-app.controller('IndexCtrl', function(Init, deviceDetector, $location) {
-  this.nav = Init.nav;
-
+  // detect device
   if( deviceDetector.device == 'unknown' ) {
     this.desktop = true;
   }
 
+  // set ative nav
   this.setActive = function(path) {
     return path === $location.path();
   }
