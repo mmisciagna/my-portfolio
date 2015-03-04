@@ -1,11 +1,13 @@
 var app = angular.module('app', [
-		'ngRoute', 
+    'ng.deviceDetector', 
+		'ngRoute',
 		'home', 
 		'design', 
 		'code', 
 		'about', 
 		'contact'
 	]);
+
 
 app.config(function($routeProvider) {
   $routeProvider.when('/home', {
@@ -33,16 +35,41 @@ app.config(function($routeProvider) {
   });
 });
 
+
 // gives body element class of 'dark' or 'light'
-app.factory('Background', function() {
+app.factory('Init', function() {
 	return {
-		color: undefined,
-		setColor: function(color) {
+		bgColor: undefined,
+
+		setBgColor: function(color) {
 			if( color == 'light' ) {
-				return this.color = color;
+				return this.bgColor = color;
 			} else {
-				return this.color = 'dark';
+				return this.bgColor = 'dark';
 			}
-		}
+		},
 	}
 });
+
+
+// detect device
+app.controller('IndexCtrl', function(deviceDetector) {
+  if( deviceDetector.device == 'unknown' ) {
+    this.desktop = true;
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

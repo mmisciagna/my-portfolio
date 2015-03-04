@@ -1,6 +1,6 @@
 var design = angular.module('design', []);
 
-home.controller('DesignCtrl', function(Background, $rootScope) {
-	Background.setColor('light');
-	$rootScope.bgColor = Background.color;
+home.controller('DesignCtrl', function(Init, $rootScope) {
+	Init.setBgColor('light');
+	$rootScope.bgColor = Init.bgColor;
 });
