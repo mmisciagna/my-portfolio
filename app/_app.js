@@ -59,6 +59,15 @@ app.controller('IndexCtrl', function(deviceDetector, $location) {
 });
 
 
+// capitalize first letter of str
+app.filter('capitalize', function() {
+  return function(str) {
+    return str.substring(0,1).toUpperCase() + str.substring(1);
+  }
+});
+
+
+
 
 
 

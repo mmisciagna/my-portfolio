@@ -24,7 +24,7 @@
 			<a ng-repeat="item in index.nav" 
 				href="#/{{item.label}}" 
 				ng-class="{active:index.setActive('/{{item.label}}')}">
-				{{item.label}}
+				{{item.label | capitalize}}
 			</a>
 		</nav>
 	</div>

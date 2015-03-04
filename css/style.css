@@ -66,11 +66,11 @@ a {
 ========================================================================== */
 body.desktop a:hover {
   color: #253137; }
-body.desktop header img {
+body.desktop #nav-bar header img {
   width: 120px; }
-body.desktop nav a:hover {
+body.desktop #nav-bar nav a:hover {
   color: #1ce8b5; }
-body.desktop nav a.active:hover {
+body.desktop #nav-bar nav a.active:hover {
   color: #253137; }
 
 /* ==========================================================================

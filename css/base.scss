@@ -100,19 +100,21 @@ body.desktop {
 		color: $blueGray-drk;
 	}
 
-	header {
-		img {
-			width: 120px;
+	#nav-bar {
+		header {
+			img {
+				width: 120px;
+			}
 		}
-	}
+	
+		nav {
+			a:hover {
+				color: $teal-lgt;
+			}
 
-	nav {
-		a:hover {
-			color: $teal-lgt;
-		}
-
-		a.active:hover {
-			color: $blueGray-drk;
+			a.active:hover {
+				color: $blueGray-drk;
+			}
 		}
 	}
 }
