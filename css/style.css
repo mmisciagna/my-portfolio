@@ -13,6 +13,10 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
+body {
+  background: #69777a;
+  color: #e0e0e0; }
+
 .cf:before,
 .cf:after {
   content: " ";
@@ -38,5 +42,19 @@ h3 {
   font-size: 1.5em;
   font-weight: 600;
   line-height: 1.125em; }
+
+/* ==========================================================================
+   dark bg
+========================================================================== */
+body.dark {
+  background: #69777a;
+  color: #e0e0e0; }
+
+/* ==========================================================================
+   light bg
+========================================================================== */
+body.light {
+  background: #e0e0e0;
+  color: #445963; }
 
 /*# sourceMappingURL=style.css.map */

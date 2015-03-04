@@ -1,0 +1,93 @@
+/* ==========================================================================
+   global
+   ========================================================================== */
+$font: 'Source Sans Pro', sans-serif;
+$blueGray-drk: #253137;
+$blueGray-med: #445963;
+$blueGray-lgt: #69777a;
+$gray-med: #c1c1c1;
+$gray-lgt: #e0e0e0;
+$teal-drk: #00bea4;
+$teal-lgt: #1ce8b5;
+
+
+* {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+	font: 400 16px/1.6em $font;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	background: $blueGray-lgt;
+	color: $gray-lgt;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 300;
+	line-height: 1.125em;
+}
+
+h2 {
+	font-size: 2.25em;
+	font-weight: 400;
+	line-height: 1.125em;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: 600;
+	line-height: 1.125em;
+}
+
+
+/* ==========================================================================
+   dark bg
+========================================================================== */
+body.dark {
+	background: $blueGray-lgt;
+	color: $gray-lgt;
+}
+
+
+/* ==========================================================================
+   light bg
+========================================================================== */
+body.light {
+	background: $gray-lgt;
+	color: $blueGray-med;
+}
+
+
+
+
+
+
+
+
+
+
+
+
