@@ -74,7 +74,26 @@ a {
 
 
 /* ==========================================================================
-   desktop
+   nav bar
+========================================================================== */
+#nav-bar {
+	background: $blueGray-drk;
+
+	nav {
+		a {
+			color: $gray-lgt;
+		}
+		
+		a.active {
+			background: $teal-lgt;
+			color: $blueGray-drk;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   desktop only
 ========================================================================== */
 body.desktop {
 	a:hover {
@@ -88,10 +107,6 @@ body.desktop {
 	}
 
 	nav {
-		a {
-			color: $gray-lgt;
-		}
-
 		a:hover {
 			color: $teal-lgt;
 		}
@@ -125,21 +140,6 @@ body.light {
 
 	a {
 		color: $teal-drk;
-	}
-}
-
-
-/* ==========================================================================
-   nav bar
-========================================================================== */
-#nav-bar {
-	background: $blueGray-drk;
-
-	nav {
-		a.active {
-			background: $teal-lgt;
-			color: $blueGray-drk;
-		}
 	}
 }
 

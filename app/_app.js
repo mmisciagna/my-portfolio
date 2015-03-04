@@ -40,11 +40,11 @@ app.config(function($routeProvider) {
 app.controller('IndexCtrl', function(deviceDetector, $location) {
   // set nav
   this.nav = [
-    {label:'home'},
-    {label:'design'},
-    {label:'code'},
-    {label:'about'},
-    {label:'contact'}
+    {label: 'home'},
+    {label: 'design'},
+    {label: 'code'},
+    {label: 'about'},
+    {label: 'contact'}
   ]
 
   // detect device
