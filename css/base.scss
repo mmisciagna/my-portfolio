@@ -20,30 +20,26 @@ $inner-padding: 20px;
   box-sizing: border-box;
 }
 
-body,
 html {
 	font: 400 16px/1.6em $font;
 	-webkit-font-smoothing: antialiased;
+	height: 100%;
+	overflow: hidden;
 	text-rendering: optimizeLegibility;
 }
 
-body {
-	background: $blueGray-lgt;
-	color: $gray-lgt;
-}
-
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after {
-  clear: both;
-}
-
 .cf {
-  *zoom: 1;
+	*zoom: 1;
+
+	&:before {
+		content: " ";
+	  display: table;
+	}
+
+	&:after {
+		@extend .cf:before;
+		clear: both;
+	}
 }
 
 h1 {
@@ -72,6 +68,118 @@ a {
 	text-decoration: none;
 }
 
+#view {
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+
+/* ==========================================================================
+   body, dark vs. light vs. desktop vs. mobile
+========================================================================== */
+body {
+	@extend html;
+	background: $blueGray-lgt;
+	color: $gray-lgt;
+
+// 
+// dark bg
+// 
+	&.dark {}
+
+// 
+// light bg
+// 
+	&.light {
+		background: $gray-lgt;
+		color: $blueGray-med;
+
+		a {
+			color: $teal-drk;
+		}
+	}
+
+// 
+// desktop only
+// 
+	&.desktop {
+		a:hover {
+			color: $blueGray-drk;
+		}
+
+		#nav-bar {
+			float: left;
+			height: 100%;
+			width: 152px;
+
+			header {
+				a {
+					background: url(../imgs/logo_dark.png) no-repeat;
+					height: 156px;
+					margin: 0 auto;
+					width: 120px;
+				}
+			}
+
+			nav {
+				a:hover {
+					color: $teal-lgt;
+
+					&.active {
+						color: $blueGray-drk;
+					}
+				}
+			}
+		}
+
+		#view {
+			float: left;
+			height: 100%;
+			width: calc(100% - 152px);
+		}
+	}
+
+// 
+// mobile only
+// 
+	&.mobile {
+	#nav-bar {
+		header {
+			a {
+				height: 107px;
+				width: 80px;
+			}
+		}
+	}
+
+// 
+// mobile dark bg
+// 
+		&.dark {
+			#nav-bar {
+				header {
+					a {
+						background: url(../imgs/logo_dark.png) no-repeat;
+					}
+				}
+			}
+		}
+
+// 
+// mobile light bg
+// 
+		&.light {
+			#nav-bar {
+				header {
+					a {
+						background: url(../imgs/logo_light.png) no-repeat;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 /* ==========================================================================
    nav bar
@@ -89,105 +197,17 @@ a {
 	nav {
 		a {
 			color: $gray-lgt;
-		}
-		
-		a.active {
-			background: $teal-lgt;
-			color: $blueGray-drk;
-		}
-	}
-}
+			display: block;
+			text-align: center;
 
-
-/* ==========================================================================
-   desktop only
-========================================================================== */
-body.desktop {
-	a:hover {
-		color: $blueGray-drk;
-	}
-
-	#nav-bar {
-		header {
-			a {
-				background: url(../imgs/logo_dark.png) no-repeat;
-				height: 156px;
-				width: 120px;
-			}
-		}
-
-		nav {
-			a:hover {
-				color: $teal-lgt;
-			}
-
-			a.active:hover {
+			&.active {
+				background: $teal-lgt;
 				color: $blueGray-drk;
 			}
 		}
 	}
 }
 
-
-/* ==========================================================================
-   mobile only
-========================================================================== */
-body.mobile {
-	#nav-bar {
-		header {
-			a {
-				height: 107px;
-				width: 80px;
-			}
-		}
-	}
-}
-
-body.dark.mobile {
-	#nav-bar {
-		header {
-			a {
-				background: url(../imgs/logo_dark.png) no-repeat;
-			}
-		}
-	}
-}
-
-body.light.mobile {
-	#nav-bar {
-		header {
-			a {
-				background: url(../imgs/logo_light.png) no-repeat;
-			}
-		}
-	}
-}
-
-
-/* ==========================================================================
-   dark bg
-========================================================================== */
-body.dark {
-	background: $blueGray-lgt;
-	color: $gray-lgt;
-
-	a {
-		color: $teal-lgt;
-	}
-}
-
-
-/* ==========================================================================
-   light bg
-========================================================================== */
-body.light {
-	background: $gray-lgt;
-	color: $blueGray-med;
-
-	a {
-		color: $teal-drk;
-	}
-}
 
 
 

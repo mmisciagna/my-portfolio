@@ -7,26 +7,20 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-body,
-html {
+html, body {
   font: 400 16px/1.6em "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
+  overflow: hidden;
   text-rendering: optimizeLegibility; }
-
-body {
-  background: #69777a;
-  color: #e0e0e0; }
-
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table; }
-
-.cf:after {
-  clear: both; }
 
 .cf {
   *zoom: 1; }
+  .cf:before, .cf:after {
+    content: " ";
+    display: table; }
+  .cf:after {
+    clear: both; }
 
 h1 {
   font-size: 3em;
@@ -50,6 +44,48 @@ a {
   cursor: pointer;
   text-decoration: none; }
 
+#view {
+  overflow: hidden;
+  overflow-y: auto; }
+
+/* ==========================================================================
+   body, dark vs. light vs. desktop vs. mobile
+========================================================================== */
+body {
+  background: #69777a;
+  color: #e0e0e0; }
+  body.light {
+    background: #e0e0e0;
+    color: #445963; }
+    body.light a {
+      color: #00bea4; }
+  body.desktop a:hover {
+    color: #253137; }
+  body.desktop #nav-bar {
+    float: left;
+    height: 100%;
+    width: 152px; }
+    body.desktop #nav-bar header a {
+      background: url(../imgs/logo_dark.png) no-repeat;
+      height: 156px;
+      margin: 0 auto;
+      width: 120px; }
+    body.desktop #nav-bar nav a:hover {
+      color: #1ce8b5; }
+      body.desktop #nav-bar nav a:hover.active {
+        color: #253137; }
+  body.desktop #view {
+    float: left;
+    height: 100%;
+    width: calc(100% - 152px); }
+  body.mobile #nav-bar header a {
+    height: 107px;
+    width: 80px; }
+  body.mobile.dark #nav-bar header a {
+    background: url(../imgs/logo_dark.png) no-repeat; }
+  body.mobile.light #nav-bar header a {
+    background: url(../imgs/logo_light.png) no-repeat; }
+
 /* ==========================================================================
    nav bar
 ========================================================================== */
@@ -59,54 +95,11 @@ a {
     background-size: 100% !important;
     display: block; }
   #nav-bar nav a {
-    color: #e0e0e0; }
-  #nav-bar nav a.active {
-    background: #1ce8b5;
-    color: #253137; }
-
-/* ==========================================================================
-   desktop only
-========================================================================== */
-body.desktop a:hover {
-  color: #253137; }
-body.desktop #nav-bar header a {
-  background: url(../imgs/logo_dark.png) no-repeat;
-  height: 156px;
-  width: 120px; }
-body.desktop #nav-bar nav a:hover {
-  color: #1ce8b5; }
-body.desktop #nav-bar nav a.active:hover {
-  color: #253137; }
-
-/* ==========================================================================
-   mobile only
-========================================================================== */
-body.mobile #nav-bar header a {
-  height: 107px;
-  width: 80px; }
-
-body.dark.mobile #nav-bar header a {
-  background: url(../imgs/logo_dark.png) no-repeat; }
-
-body.light.mobile #nav-bar header a {
-  background: url(../imgs/logo_light.png) no-repeat; }
-
-/* ==========================================================================
-   dark bg
-========================================================================== */
-body.dark {
-  background: #69777a;
-  color: #e0e0e0; }
-  body.dark a {
-    color: #1ce8b5; }
-
-/* ==========================================================================
-   light bg
-========================================================================== */
-body.light {
-  background: #e0e0e0;
-  color: #445963; }
-  body.light a {
-    color: #00bea4; }
+    color: #e0e0e0;
+    display: block;
+    text-align: center; }
+    #nav-bar nav a.active {
+      background: #1ce8b5;
+      color: #253137; }
 
 /*# sourceMappingURL=style.css.map */
