@@ -79,6 +79,13 @@ a {
 #nav-bar {
 	background: $blueGray-drk;
 
+	header {
+		a {
+			background-size: 100% !important;
+			display: block;
+		}
+	}
+
 	nav {
 		a {
 			color: $gray-lgt;
@@ -102,11 +109,13 @@ body.desktop {
 
 	#nav-bar {
 		header {
-			img {
+			a {
+				background: url(../imgs/logo_dark.png) no-repeat;
+				height: 156px;
 				width: 120px;
 			}
 		}
-	
+
 		nav {
 			a:hover {
 				color: $teal-lgt;
@@ -114,6 +123,41 @@ body.desktop {
 
 			a.active:hover {
 				color: $blueGray-drk;
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   mobile only
+========================================================================== */
+body.mobile {
+	#nav-bar {
+		header {
+			a {
+				height: 107px;
+				width: 80px;
+			}
+		}
+	}
+}
+
+body.dark.mobile {
+	#nav-bar {
+		header {
+			a {
+				background: url(../imgs/logo_dark.png) no-repeat;
+			}
+		}
+	}
+}
+
+body.light.mobile {
+	#nav-bar {
+		header {
+			a {
+				background: url(../imgs/logo_light.png) no-repeat;
 			}
 		}
 	}

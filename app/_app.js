@@ -38,21 +38,26 @@ app.config(function($routeProvider) {
 
 
 app.controller('IndexCtrl', function(deviceDetector, $location) {
-  // set nav
+  // set nav & bg color
   this.nav = [
     {label: 'home'},
     {label: 'design'},
     {label: 'code'},
     {label: 'about'},
     {label: 'contact'}
-  ]
+  ];
 
   // detect device
   if( deviceDetector.device == 'unknown' ) {
     this.desktop = true;
+    console.log('Desktop');
+
+  } else {
+    this.mobile = true;
+    console.log('Mobile');
   }
 
-  // set ative nav
+  // set active nav
   this.setActive = function(path) {
     return path === $location.path();
   }

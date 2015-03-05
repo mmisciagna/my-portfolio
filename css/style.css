@@ -55,6 +55,9 @@ a {
 ========================================================================== */
 #nav-bar {
   background: #253137; }
+  #nav-bar header a {
+    background-size: 100% !important;
+    display: block; }
   #nav-bar nav a {
     color: #e0e0e0; }
   #nav-bar nav a.active {
@@ -66,12 +69,27 @@ a {
 ========================================================================== */
 body.desktop a:hover {
   color: #253137; }
-body.desktop #nav-bar header img {
+body.desktop #nav-bar header a {
+  background: url(../imgs/logo_dark.png) no-repeat;
+  height: 156px;
   width: 120px; }
 body.desktop #nav-bar nav a:hover {
   color: #1ce8b5; }
 body.desktop #nav-bar nav a.active:hover {
   color: #253137; }
+
+/* ==========================================================================
+   mobile only
+========================================================================== */
+body.mobile #nav-bar header a {
+  height: 107px;
+  width: 80px; }
+
+body.dark.mobile #nav-bar header a {
+  background: url(../imgs/logo_dark.png) no-repeat; }
+
+body.light.mobile #nav-bar header a {
+  background: url(../imgs/logo_light.png) no-repeat; }
 
 /* ==========================================================================
    dark bg
