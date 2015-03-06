@@ -46,6 +46,14 @@ a {
   a:focus {
     outline: none; }
 
+.table {
+  display: table;
+  height: 100%;
+  width: 100%; }
+  .table .cell {
+    display: table-cell;
+    vertical-align: middle; }
+
 /* ==========================================================================
    nav bar
 ========================================================================== */
@@ -240,7 +248,15 @@ body {
 /* ==========================================================================
    home
 ========================================================================== */
-main#home h1 {
-  margin: 80px 40px; }
+#home.table {
+  height: 50%; }
+#home h1 {
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  padding: 0 40px; }
 
 /*# sourceMappingURL=style.css.map */
