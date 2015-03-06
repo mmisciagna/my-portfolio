@@ -1,7 +1,7 @@
 /* ==========================================================================
    global
    ========================================================================== */
-$font: 'Source Sans Pro', sans-serif;
+$font-stack: 'Source Sans Pro', sans-serif;
 $blueGray-drk: #253137;
 $blueGray-med: #445963;
 $blueGray-lgt: #69777a;
@@ -12,6 +12,18 @@ $teal-lgt: #1ce8b5;
 $outer-padding: 20px;
 $inner-padding: 20px;
 
+@mixin transition($prop: all, $time: .2s, $easing: cubic-bezier(0.4, 0.0, 0.2, 1)) {
+	-ms-transition: $prop $time $easing;
+	-moz-transition: $prop $time $easing;
+	-webkit-transition: $prop $time $easing;
+	transition: $prop $time $easing;
+}
+
+@mixin content($content: '') {
+	content: $content;
+	display: block;
+	position: absolute;
+}
 
 * {
 	-moz-box-sizing: border-box;
@@ -21,7 +33,7 @@ $inner-padding: 20px;
 }
 
 html {
-	font: 400 16px/1.6em $font;
+	font: 400 16px/1.6em $font-stack;
 	-webkit-font-smoothing: antialiased;
 	height: 100%;
 	overflow: hidden;
@@ -66,16 +78,94 @@ h3 {
 a {
 	cursor: pointer;
 	text-decoration: none;
-}
 
-#view {
-	overflow: hidden;
-	overflow-y: auto;
+	&:focus {
+		outline: none;
+	}
 }
 
 
 /* ==========================================================================
-   body, dark vs. light vs. desktop vs. mobile
+   nav bar
+========================================================================== */
+#nav-bar {
+	background: $blueGray-drk;
+
+	header {
+		margin-bottom: 64px;
+
+		a {
+			background-size: 100% !important;
+			display: block;
+		}
+	}
+
+	nav {
+		position: relative;
+
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				list-style: none;
+				margin: 0;
+				position: relative;
+
+				&:before {
+					@include content;
+					background: $blueGray-med;
+					height: 1px;
+					left: 0;
+					top: 0;
+					width: 100%;
+				}	
+
+				&:last-child:after {
+					@include content;
+					background: $blueGray-med;
+					bottom: 0;
+					height: 1px;
+					left: 0;
+					width: 100%;
+				}
+
+				a {
+					color: $gray-lgt;
+					display: block;
+					font-size: 16px;
+					line-height: 1;
+					padding: 16px;
+					position: relative;
+					text-align: center;
+				}
+
+				&.active {
+					&:before {
+						display: none;
+					}
+
+					& + li:before {
+						display: none;
+					}
+
+					&:after {
+						display: none;
+					}
+
+					a {
+						background: $teal-lgt;
+						color: $blueGray-drk !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   body: dark vs. light vs. desktop vs. mobile
 ========================================================================== */
 body {
 	@extend html;
@@ -85,7 +175,15 @@ body {
 // 
 // dark bg
 // 
-	&.dark {}
+	&.dark {
+		h3 {
+			color: $blueGray-med;
+		}
+
+		a {
+			color: $teal-lgt;
+		}
+	}
 
 // 
 // light bg
@@ -94,8 +192,28 @@ body {
 		background: $gray-lgt;
 		color: $blueGray-med;
 
+		h3 {
+			color: $gray-med;
+		}
+
 		a {
 			color: $teal-drk;
+		}
+
+		#nav-bar {
+			nav {
+				ul {
+					li {
+						&:before {
+							background: $gray-lgt;
+						}	
+
+						&:last-child:after {
+							background: $gray-lgt;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -103,8 +221,12 @@ body {
 // desktop only
 // 
 	&.desktop {
-		a:hover {
-			color: $blueGray-drk;
+		a {
+			@include transition;
+
+			&:hover {
+				color: $blueGray-drk;
+			}
 		}
 
 		#nav-bar {
@@ -122,11 +244,67 @@ body {
 			}
 
 			nav {
-				a:hover {
-					color: $teal-lgt;
+				&:before {
+					@include content;
+						border: 12px solid transparent;
+						border-bottom-color: $blueGray-lgt;
+						border-right-color: $blueGray-lgt;
+						height: 0;
+						right: 0;
+						top: -24px;
+						width: 0;
+					}
 
-					&.active {
-						color: $blueGray-drk;
+					&:after {
+						@include content;
+						border: 12px solid transparent;
+						border-right-color: $blueGray-lgt;
+						border-top-color: $blueGray-lgt;
+						bottom: -24px;
+						height: 0;
+						right: 0;
+						width: 0;
+					}
+
+				li {
+					&:before {
+						width: calc(100% - 24px);
+					}
+
+					&:after {
+						width: calc(100% - 24px);
+					}
+
+					a {
+						&:hover {
+							color: $teal-lgt;
+						}
+
+						&.active:hover {
+							color: $blueGray-drk;
+						}
+
+						&:before {
+							@include content;
+							border: 12px solid transparent;
+							border-right-color: $blueGray-lgt;
+							border-top-color: $blueGray-lgt;
+							height: 0;
+							right: 0;
+							top: 0;
+							width: 0;
+						}
+
+						&:after {
+							@include content;
+							border: 12px solid transparent;
+							border-bottom-color: $blueGray-lgt;
+							border-right-color: $blueGray-lgt;
+							bottom: 0;
+							height: 0;
+							right: 0;
+							width: 0;
+						}
 					}
 				}
 			}
@@ -137,20 +315,64 @@ body {
 			height: 100%;
 			width: calc(100% - 152px);
 		}
+
+// 
+// desktop light bg
+// 
+		&.light {
+			#nav-bar {
+				nav {
+					&:before {
+						border-bottom-color: $gray-lgt;
+						border-right-color: $gray-lgt;
+						top: -24px;
+					}
+
+					&:after {
+						border-right-color: $gray-lgt;
+						border-top-color: $gray-lgt;
+						bottom: -24px;
+					}
+
+					a {
+						&:hover {
+							color: $teal-lgt;
+						}
+
+						&.active:hover {
+							color: $blueGray-drk;
+						}
+
+						&:before {
+							border-right-color: $gray-lgt;
+							border-top-color: $gray-lgt;
+							top: 0;
+						}
+
+						&:after {
+							border-bottom-color: $gray-lgt;
+							border-right-color: $gray-lgt;
+							bottom: 0;
+						}
+					}
+				}
+			}
+		}
 	}
+
 
 // 
 // mobile only
 // 
 	&.mobile {
-	#nav-bar {
-		header {
-			a {
-				height: 107px;
-				width: 80px;
+		#nav-bar {
+			header {
+				a {
+					height: 107px;
+					width: 80px;
+				}
 			}
 		}
-	}
 
 // 
 // mobile dark bg
@@ -182,32 +404,34 @@ body {
 
 
 /* ==========================================================================
-   nav bar
+   sections
 ========================================================================== */
-#nav-bar {
-	background: $blueGray-drk;
+#view {
+	overflow: hidden;
+	overflow-y: auto;
+	padding: $outer-padding;
 
 	header {
-		a {
-			background-size: 100% !important;
-			display: block;
+		padding: $inner-padding;
+
+		h3 {
+			border-bottom: 1px solid;
+			max-width: 152px;
 		}
 	}
 
-	nav {
-		a {
-			color: $gray-lgt;
-			display: block;
-			text-align: center;
-
-			&.active {
-				background: $teal-lgt;
-				color: $blueGray-drk;
-			}
-		}
+	main {
+		padding: $inner-padding;
 	}
 }
 
+
+/* ==========================================================================
+   home
+========================================================================== */
+main#home h1 {
+	margin: $inner-padding * 4 $inner-padding * 2;
+}
 
 
 

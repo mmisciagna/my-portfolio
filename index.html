@@ -19,11 +19,13 @@
 		</header>
 
 		<nav>
-			<a ng-repeat="item in index.nav" 
-				href="#/{{item.label}}" 
-				ng-class="{active:index.setActive('/{{item.label}}')}">
-				{{item.label | capitalize}}
-			</a>
+			<ul>
+				<li ng-repeat="item in index.nav" ng-class="{active:index.setActive('/{{item.label}}')}">
+					<a href="#/{{item.label}}" ng-class="{carets:index.desktop}">
+						{{item.label | capitalize}}
+					</a>
+				</li>
+		</ul>
 		</nav>
 	</div>
 
