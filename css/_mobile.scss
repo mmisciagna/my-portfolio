@@ -1,0 +1,36 @@
+&.mobile {
+  #nav-bar {
+    header {
+      a {
+        height: 107px;
+        width: 80px;
+      }
+    }
+  }
+
+// 
+// mobile dark bg
+// 
+  &.dark {
+    #nav-bar {
+      header {
+        a {
+          background: url(../imgs/logo_dark.png) no-repeat;
+        }
+      }
+    }
+  }
+
+// 
+// mobile light bg
+// 
+  &.light {
+    #nav-bar {
+      header {
+        a {
+          background: url(../imgs/logo_light.png) no-repeat;
+        }
+      }
+    }
+  }
+}

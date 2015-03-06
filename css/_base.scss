@@ -106,83 +106,7 @@ a {
 }
 
 
-/* ==========================================================================
-   nav bar
-========================================================================== */
-#nav-bar {
-	background: $blueGray-drk;
-
-	header {
-		margin-bottom: 64px;
-
-		a {
-			background-size: 100% !important;
-			display: block;
-		}
-	}
-
-	nav {
-		position: relative;
-
-		ul {
-			margin: 0;
-			padding: 0;
-
-			li {
-				list-style: none;
-				margin: 0;
-				position: relative;
-
-				&:before {
-					@include content;
-					background: $blueGray-med;
-					height: 1px;
-					left: 0;
-					top: 0;
-					width: 100%;
-				}	
-
-				&:last-child:after {
-					@include content;
-					background: $blueGray-med;
-					bottom: 0;
-					height: 1px;
-					left: 0;
-					width: 100%;
-				}
-
-				a {
-					color: $gray-lgt;
-					display: block;
-					font-size: 16px;
-					line-height: 1;
-					padding: 16px;
-					position: relative;
-					text-align: center;
-				}
-
-				&.active {
-					&:before {
-						display: none;
-					}
-
-					& + li:before {
-						display: none;
-					}
-
-					&:after {
-						display: none;
-					}
-
-					a {
-						background: $teal-lgt;
-						color: $blueGray-drk !important;
-					}
-				}
-			}
-		}
-	}
-}
+@import '_navbar';
 
 
 /* ==========================================================================
@@ -193,234 +117,53 @@ body {
 	background: $blueGray-lgt;
 	color: $gray-lgt;
 
-// 
-// dark bg
-// 
+	// 
+	// dark bg
+	// 
 	&.dark {
-		h3 {
-			color: $blueGray-med;
-		}
+	  h3 {
+	    color: $blueGray-med;
+	  }
 
-		a {
-			color: $teal-lgt;
-		}
+	  a {
+	    color: $teal-lgt;
+	  }
 	}
 
-// 
-// light bg
-// 
+	// 
+	// light bg
+	// 
 	&.light {
-		background: $gray-lgt;
-		color: $blueGray-med;
+	  background: $gray-lgt;
+	  color: $blueGray-med;
 
-		h3 {
-			color: $gray-med;
-		}
+	  h3 {
+	    color: $gray-med;
+	  }
 
-		a {
-			color: $teal-drk;
-		}
+	  a {
+	    color: $teal-drk;
+	  }
 
-		#nav-bar {
-			nav {
-				ul {
-					li {
-						&:before {
-							background: $gray-lgt;
-						}	
+	  #nav-bar {
+	    nav {
+	      ul {
+	        li {
+	          &:before {
+	            background: $gray-lgt;
+	          } 
 
-						&:last-child:after {
-							background: $gray-lgt;
-						}
-					}
-				}
-			}
-		}
+	          &:last-child:after {
+	            background: $gray-lgt;
+	          }
+	        }
+	      }
+	    }
+	  }
 	}
 
-// 
-// desktop only
-// 
-	&.desktop {
-		a {
-			@include transition;
-
-			&:hover {
-				color: $blueGray-drk;
-			}
-		}
-
-		#nav-bar {
-			float: left;
-			height: 100%;
-			width: 152px;
-
-			header {
-				a {
-					background: url(../imgs/logo_dark.png) no-repeat;
-					height: 156px;
-					margin: 0 auto;
-					width: 120px;
-				}
-			}
-
-			nav {
-				&:before {
-					@include content;
-						border: 12px solid transparent;
-						border-bottom-color: $blueGray-lgt;
-						border-right-color: $blueGray-lgt;
-						height: 0;
-						right: 0;
-						top: -24px;
-						width: 0;
-					}
-
-					&:after {
-						@include content;
-						border: 12px solid transparent;
-						border-right-color: $blueGray-lgt;
-						border-top-color: $blueGray-lgt;
-						bottom: -24px;
-						height: 0;
-						right: 0;
-						width: 0;
-					}
-
-				li {
-					&:before {
-						width: calc(100% - 24px);
-					}
-
-					&:after {
-						width: calc(100% - 24px);
-					}
-
-					a {
-						&:hover {
-							color: $teal-lgt;
-						}
-
-						&.active:hover {
-							color: $blueGray-drk;
-						}
-
-						&:before {
-							@include content;
-							border: 12px solid transparent;
-							border-right-color: $blueGray-lgt;
-							border-top-color: $blueGray-lgt;
-							height: 0;
-							right: 0;
-							top: 0;
-							width: 0;
-						}
-
-						&:after {
-							@include content;
-							border: 12px solid transparent;
-							border-bottom-color: $blueGray-lgt;
-							border-right-color: $blueGray-lgt;
-							bottom: 0;
-							height: 0;
-							right: 0;
-							width: 0;
-						}
-					}
-				}
-			}
-		}
-
-		#view {
-			float: left;
-			height: 100%;
-			width: calc(100% - 152px);
-		}
-
-// 
-// desktop light bg
-// 
-		&.light {
-			#nav-bar {
-				nav {
-					&:before {
-						border-bottom-color: $gray-lgt;
-						border-right-color: $gray-lgt;
-						top: -24px;
-					}
-
-					&:after {
-						border-right-color: $gray-lgt;
-						border-top-color: $gray-lgt;
-						bottom: -24px;
-					}
-
-					a {
-						&:hover {
-							color: $teal-lgt;
-						}
-
-						&.active:hover {
-							color: $blueGray-drk;
-						}
-
-						&:before {
-							border-right-color: $gray-lgt;
-							border-top-color: $gray-lgt;
-							top: 0;
-						}
-
-						&:after {
-							border-bottom-color: $gray-lgt;
-							border-right-color: $gray-lgt;
-							bottom: 0;
-						}
-					}
-				}
-			}
-		}
-	}
-
-
-// 
-// mobile only
-// 
-	&.mobile {
-		#nav-bar {
-			header {
-				a {
-					height: 107px;
-					width: 80px;
-				}
-			}
-		}
-
-// 
-// mobile dark bg
-// 
-		&.dark {
-			#nav-bar {
-				header {
-					a {
-						background: url(../imgs/logo_dark.png) no-repeat;
-					}
-				}
-			}
-		}
-
-// 
-// mobile light bg
-// 
-		&.light {
-			#nav-bar {
-				header {
-					a {
-						background: url(../imgs/logo_light.png) no-repeat;
-					}
-				}
-			}
-		}
-	}
+	@import '_desktop';
+	@import '_mobile';
 }
 
 

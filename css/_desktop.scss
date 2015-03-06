@@ -1,0 +1,139 @@
+&.desktop {
+  a {
+    @include transition;
+
+    &:hover {
+      color: $blueGray-drk;
+    }
+  }
+
+  #nav-bar {
+    float: left;
+    height: 100%;
+    width: 152px;
+
+    header {
+      a {
+        background: url(../imgs/logo_dark.png) no-repeat;
+        height: 156px;
+        margin: 0 auto;
+        width: 120px;
+      }
+    }
+
+    nav {
+      &:before {
+        @include content;
+          border: 12px solid transparent;
+          border-bottom-color: $blueGray-lgt;
+          border-right-color: $blueGray-lgt;
+          height: 0;
+          right: 0;
+          top: -24px;
+          width: 0;
+        }
+
+        &:after {
+          @include content;
+          border: 12px solid transparent;
+          border-right-color: $blueGray-lgt;
+          border-top-color: $blueGray-lgt;
+          bottom: -24px;
+          height: 0;
+          right: 0;
+          width: 0;
+        }
+
+      li {
+        &:before {
+          width: calc(100% - 24px);
+        }
+
+        &:after {
+          width: calc(100% - 24px);
+        }
+
+        a {
+          &:hover {
+            color: $teal-lgt;
+          }
+
+          &.active:hover {
+            color: $blueGray-drk;
+          }
+
+          &:before {
+            @include content;
+            border: 12px solid transparent;
+            border-right-color: $blueGray-lgt;
+            border-top-color: $blueGray-lgt;
+            height: 0;
+            right: 0;
+            top: 0;
+            width: 0;
+          }
+
+          &:after {
+            @include content;
+            border: 12px solid transparent;
+            border-bottom-color: $blueGray-lgt;
+            border-right-color: $blueGray-lgt;
+            bottom: 0;
+            height: 0;
+            right: 0;
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #view {
+    float: left;
+    height: 100%;
+    width: calc(100% - 152px);
+  }
+
+// 
+// desktop light bg
+// 
+  &.light {
+    #nav-bar {
+      nav {
+        &:before {
+          border-bottom-color: $gray-lgt;
+          border-right-color: $gray-lgt;
+          top: -24px;
+        }
+
+        &:after {
+          border-right-color: $gray-lgt;
+          border-top-color: $gray-lgt;
+          bottom: -24px;
+        }
+
+        a {
+          &:hover {
+            color: $teal-lgt;
+          }
+
+          &.active:hover {
+            color: $blueGray-drk;
+          }
+
+          &:before {
+            border-right-color: $gray-lgt;
+            border-top-color: $gray-lgt;
+            top: 0;
+          }
+
+          &:after {
+            border-bottom-color: $gray-lgt;
+            border-right-color: $gray-lgt;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
