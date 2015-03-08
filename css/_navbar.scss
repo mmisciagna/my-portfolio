@@ -5,8 +5,10 @@
     margin-bottom: 64px;
 
     a {
-      background-size: 100% !important;
-      display: block;
+      &.logo {
+        background-size: 100% !important;
+        display: block;
+      }
     }
   }
 

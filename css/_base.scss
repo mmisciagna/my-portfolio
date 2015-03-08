@@ -35,6 +35,13 @@ $inner-padding: 20px;
 	word-break: break-word;
 }
 
+@mixin translate($x,$y) {
+	-ms-transform: translate($x,$y);
+  -moz-transform: translate($x,$y);
+  -webkit-transform: translate($x,$y);
+  transform: translate($x,$y);
+}
+
 * {
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -143,22 +150,6 @@ body {
 
 	  a {
 	    color: $teal-drk;
-	  }
-
-	  #nav-bar {
-	    nav {
-	      ul {
-	        li {
-	          &:before {
-	            background: $gray-lgt;
-	          } 
-
-	          &:last-child:after {
-	            background: $gray-lgt;
-	          }
-	        }
-	      }
-	    }
 	  }
 	}
 

@@ -14,10 +14,12 @@
 
     header {
       a {
-        background: url(../imgs/logo_dark.png) no-repeat;
-        height: 156px;
-        margin: 0 auto;
-        width: 120px;
+        &.logo {
+          background: url(../imgs/logo_dark.png) no-repeat;
+          height: 156px;
+          margin: 0 auto;
+          width: 120px;
+        }
       }
     }
 
@@ -110,6 +112,18 @@
           border-right-color: $gray-lgt;
           border-top-color: $gray-lgt;
           bottom: -24px;
+        }
+
+        ul {
+          li {
+            &:before {
+              background: $gray-lgt;
+            } 
+
+            &:last-child:after {
+              background: $gray-lgt;
+            }
+          }
         }
 
         a {

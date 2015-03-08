@@ -1,9 +1,53 @@
 &.mobile {
   #nav-bar {
+    height: 56px;
+    overflow: visible;
+
     header {
+      padding: 0 24px;
+
       a {
-        height: 107px;
-        width: 80px;
+        &.logo {
+          height: 107px;
+          position: relative;
+          width: 80px;
+          z-index: 1;
+
+          &.menuActive {
+            background: url(../imgs/logo_dark.png) no-repeat !important;
+            background-size: 100% !important;
+          }
+        }
+
+        &.menu-btn {
+          background: url(../imgs/menu_triangle.svg) no-repeat;
+          background-size: 100% !important;
+          height: 24px;
+          position: absolute;
+          right: 24px;
+          top: 16px;
+          width: 24px;
+
+          &.menuActive {
+            background: url(../imgs/menu_x.svg) no-repeat;
+          }
+        }
+      }
+    }
+
+    nav {
+      background: $blueGray-drk;
+      border-top: 1px solid $blueGray-med;
+      min-height: calc(100% - 56px);
+      padding-top: 72px;
+      position: absolute;
+      top: 56px;
+      @include translate(100%,0);
+      width: 100%;
+
+      &.menuActive {
+        @include transition;
+        @include translate(0,0);
       }
     }
   }
@@ -15,7 +59,9 @@
     #nav-bar {
       header {
         a {
-          background: url(../imgs/logo_dark.png) no-repeat;
+          &.logo {
+            background: url(../imgs/logo_dark.png) no-repeat;
+          }
         }
       }
     }
@@ -28,7 +74,9 @@
     #nav-bar {
       header {
         a {
-          background: url(../imgs/logo_light.png) no-repeat;
+          &.logo {
+            background: url(../imgs/logo_light.png) no-repeat;
+          }
         }
       }
     }

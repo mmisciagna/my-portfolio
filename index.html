@@ -13,19 +13,33 @@
 </head>
 <body ng-class="{dark:bgColor=='dark', light:bgColor=='light', desktop:index.desktop, mobile:index.mobile}">
 
-	<div id="nav-bar">
+	<div id="nav-bar" class="cf">
 		<header>
-			<a href="#/home"></a>
+			<a href="#/home" 
+				class="logo" 
+				ng-class="{menuActive:index.menuActive}"
+				ng-click="index.menuActive = !index.menuActive">
+			</a>
+
+			<a class="menu-btn" 
+				ng-if="index.mobile"
+				ng-class="{menuActive:index.menuActive}" 
+				ng-click="index.menuActive = !index.menuActive">
+			</a>
 		</header>
 
-		<nav>
+		<nav ng-class="{menuActive:index.menuActive}">
 			<ul>
-				<li ng-repeat="item in index.nav" ng-class="{active:index.setActive('/{{item.label}}')}">
-					<a href="#/{{item.label}}" ng-class="{carets:index.desktop}">
+				<li ng-repeat="item in index.nav" 
+					ng-class="{active:index.setActive('/{{item.label}}')}">
+
+					<a href="#/{{item.label}}" 
+						ng-class="{carets:index.desktop}" 
+						ng-click="index.menuActive = !index.menuActive">
 						{{item.label | capitalize}}
 					</a>
 				</li>
-		</ul>
+			</ul>
 		</nav>
 	</div>
 
