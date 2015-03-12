@@ -1,5 +1,6 @@
 var app = angular.module('app', [
-    'ng.deviceDetector', 
+    'ng.deviceDetector',
+    'matchmedia-ng', 
 		'ngRoute',
 		'home', 
 		'design', 
@@ -37,7 +38,7 @@ app.config(function($routeProvider) {
 
 
 
-app.controller('IndexCtrl', function(deviceDetector, $location, $scope) {
+app.controller('IndexCtrl', function(deviceDetector, $location, $scope, matchmedia) {
   // set nav & bg color
   this.nav = [
     {label: 'home'},
@@ -46,6 +47,10 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope) {
     {label: 'about'},
     {label: 'contact'}
   ];
+ 
+  var unregister = matchmedia.onPhone(function(mediaQueryList) {
+    this.isPhone = mediaQueryList.matches;
+  });
 
   // detect device
   if( deviceDetector.device == 'unknown' ) {

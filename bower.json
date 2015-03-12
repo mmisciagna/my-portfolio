@@ -14,6 +14,7 @@
     "tests"
   ],
   "dependencies": {
+    "matchmedia-ng": "~1.0.5",
     "ng-device-detector": "~1.1.1"
   }
 }
