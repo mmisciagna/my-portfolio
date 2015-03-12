@@ -42,11 +42,11 @@
       padding-top: 72px;
       position: absolute;
       top: 56px;
+      @include transition;
       @include translate(100%,0);
       width: 100%;
 
       &.menuActive {
-        @include transition;
         @include translate(0,0);
       }
     }

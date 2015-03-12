@@ -249,16 +249,16 @@ body {
       padding-top: 72px;
       position: absolute;
       top: 56px;
+      -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       -ms-transform: translate(100%, 0);
       -moz-transform: translate(100%, 0);
       -webkit-transform: translate(100%, 0);
       transform: translate(100%, 0);
       width: 100%; }
       body.mobile #nav-bar nav.menuActive {
-        -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         -ms-transform: translate(0, 0);
         -moz-transform: translate(0, 0);
         -webkit-transform: translate(0, 0);

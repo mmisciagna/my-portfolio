@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-class="{dark:bgColor=='dark', light:bgColor=='light', desktop:index.desktop, mobile:index.mobile}">
+<body resize ng-class="{dark:bgColor=='dark', light:bgColor=='light', desktop:!index.mobile, mobile:index.mobile}">
 
 	<div id="nav-bar" class="cf">
 		<header>

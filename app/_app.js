@@ -37,7 +37,7 @@ app.config(function($routeProvider) {
 
 
 
-app.controller('IndexCtrl', function(deviceDetector, $location) {
+app.controller('IndexCtrl', function(deviceDetector, $location, $scope) {
   // set nav & bg color
   this.nav = [
     {label: 'home'},
@@ -49,7 +49,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location) {
 
   // detect device
   if( deviceDetector.device == 'unknown' ) {
-    this.desktop = true;
+    this.mobile = false;
     console.log('Desktop');
 
   } else {
@@ -68,6 +68,24 @@ app.controller('IndexCtrl', function(deviceDetector, $location) {
 app.filter('capitalize', function() {
   return function(str) {
     return str.substring(0,1).toUpperCase() + str.substring(1);
+  }
+});
+
+
+// detect window resize
+app.directive('body', function ($window) {
+  return {
+    restrict: 'E',
+    link: function(scope) {
+      angular.element($window).on('resize', function() {
+        if($window.innerWidth <= 768) {
+          scope.index.mobile = true;
+
+        } else {
+          scope.index.mobile = false;
+        }
+      });
+    }
   }
 });
 
