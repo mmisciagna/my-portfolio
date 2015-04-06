@@ -1,6 +1,6 @@
 var app = angular.module('app', [
     'ng.deviceDetector',
-    'matchmedia-ng', 
+    // 'matchmedia-ng', 
 		'ngRoute',
 		'home', 
 		'design', 
@@ -37,8 +37,7 @@ app.config(function($routeProvider) {
 });
 
 
-
-app.controller('IndexCtrl', function(deviceDetector, $location, $scope, matchmedia) {
+app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window) {
   // set nav & bg color
   this.nav = [
     {label: 'home'},
@@ -47,25 +46,55 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, matchmed
     {label: 'about'},
     {label: 'contact'}
   ];
- 
-  var unregister = matchmedia.onPhone(function(mediaQueryList) {
-    this.isPhone = mediaQueryList.matches;
-  });
-
-  // detect device
-  if( deviceDetector.device == 'unknown' ) {
-    this.mobile = false;
-    console.log('Desktop');
-
-  } else {
-    this.mobile = true;
-    console.log('Mobile');
-  }
 
   // set active nav
   this.setActive = function(path) {
     return path === $location.path();
   }
+
+
+  // DEVICE
+  if( deviceDetector.device == 'unknown' ) {
+    $scope.index.mobile = false;
+
+  } else {
+    $scope.index.mobile = true;
+  }
+
+
+  // MEDIAQUERIES
+  // on load
+  $scope.$watch(function() {
+    return window.innerWidth;
+
+  }, function(width) {
+    if( width <= 768 ) {
+      $scope.index.mobile = true;
+
+    } else {
+      $scope.index.mobile = false;
+    }
+
+    console.log('Mobile = ' + $scope.index.mobile);
+  });
+
+  // on resize
+  $window.onresize = function() {
+    var width = window.innerWidth;
+
+    if( width <= 768 ) {
+      $scope.$apply(function() {
+        $scope.index.mobile = true;
+      });
+
+    } else {
+      $scope.$apply(function() {
+        $scope.index.mobile = false;
+      });
+    }
+
+    console.log('Mobile = ' + $scope.index.mobile);
+  };
 });
 
 
@@ -75,25 +104,6 @@ app.filter('capitalize', function() {
     return str.substring(0,1).toUpperCase() + str.substring(1);
   }
 });
-
-
-// detect window resize
-app.directive('body', function ($window) {
-  return {
-    restrict: 'E',
-    link: function(scope) {
-      angular.element($window).on('resize', function() {
-        if($window.innerWidth <= 768) {
-          scope.index.mobile = true;
-
-        } else {
-          scope.index.mobile = false;
-        }
-      });
-    }
-  }
-});
-
 
 
 
