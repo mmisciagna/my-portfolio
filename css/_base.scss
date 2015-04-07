@@ -222,26 +222,27 @@ body {
 			padding: 0;
 
 			li {
-				&.list-item {
-					border-top: 1px solid $gray-med;
-					margin: 20px 0;
-					padding: 40px 0;
+				border-top: 1px solid $gray-med;
+				margin: 20px 0;
+				padding: 40px 0;
 
-					&:first-child {
-						border: none;
-						margin-top: 0;
-						padding-top: 0;
+				&:first-child {
+					border: none;
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+				.title {
+					a {
+
 					}
+				}
 
-					.title {
-					}
+				.thumb {
+					text-align: center;
 
-					.thumb {
-						text-align: center;
-
-						img {
-							max-height: 240px;
-						}
+					img {
+						max-height: 240px;
 					}
 				}
 			}

@@ -23,13 +23,13 @@
 				 class="logo" 
 				 ng-class="{menuActive:index.menuActive}"
 				 ng-click="index.menuActive = false">
-			</a>
+			</a> <!-- .logo -->
 
 			<a class="menu-btn" 
 				 ng-if="index.mobile"
 				 ng-class="{menuActive:index.menuActive}" 
 				 ng-click="index.menuActive = !index.menuActive">
-			</a>
+			</a> <!-- .menu-btn -->
 		</header>
 
 		<nav ng-class="{menuActive:index.menuActive}"
@@ -46,7 +46,7 @@
 				</li>
 			</ul>
 		</nav>
-	</div>
+	</div> <!-- nav-bar -->
 
 	<div id="view" ng-view></div>
 

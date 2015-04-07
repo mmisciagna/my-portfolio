@@ -4,15 +4,41 @@
 
 <main id="design">
   <ul class="work-list">
-    <li class="list-item cf" ng-repeat="item in design.designs">
-      <div class="title">
-        <h2>{{item.title}}</h2>
-      </div> <!-- .title -->
+    <li class="cf" ng-repeat="item in design.designs">
+      <h2 class="title" ng-if="index.mobile">
+        {{item.title}} 
+        <a href="{{item.link}}" target="_blank" ng-if="item.link"></a>
+      </h2> <!-- .title for mobile-->
 
       <div class="thumb">
         <img ng-src="../imgs/designs/{{item.thumb[0].src}}" border="0" 
              alt="{{item.thumb[0].alt}}" />
       </div> <!-- .thumb -->
-    </li>
+
+
+        <div class="details">
+          <h2 class="title" ng-if="!index.mobile">
+            {{item.title}} 
+            <a href="{{item.link}}" target="_blank" ng-if="item.link"></a>
+          </h2> <!-- .title for desktop-->
+
+          <div class="write-up">
+            <p>
+              <strong>Role:</strong>
+              <span>{{item.role}}</span>
+            </p>
+
+            <p>
+              <strong>Goal:</strong>
+              <span>{{item.goal}}</span>
+            </p>
+
+            <p>
+              <strong>Solution:</strong>
+              <span>{{item.solution}}</span>
+            </p>
+          </div> <!-- .write-up -->
+        </div> <!-- .details -->
+    </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
 </main>
