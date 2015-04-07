@@ -1,6 +1,5 @@
 var app = angular.module('app', [
     'ng.deviceDetector',
-    // 'matchmedia-ng', 
 		'ngRoute',
 		'home', 
 		'design', 
@@ -37,8 +36,9 @@ app.config(function($routeProvider) {
 });
 
 
-app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window) {
-  // set nav & bg color
+app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
+                                     $timeout) {
+  // NAV & BG COLOR
   this.nav = [
     {label: 'home'},
     {label: 'design'},
@@ -53,12 +53,13 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window)
   }
 
 
-  // DEVICE
-  if( deviceDetector.device == 'unknown' ) {
+  // DEVICE DETECTION
+  if( deviceDetector.device == 'unknown' &&  window.innerWidth <= 700 ) {
     $scope.index.mobile = false;
 
   } else {
     $scope.index.mobile = true;
+    $scope.index.menuReady = false;
   }
 
 
@@ -68,11 +69,17 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window)
     return window.innerWidth;
 
   }, function(width) {
-    if( width <= 768 ) {
+    if( width <= 700 ) {
       $scope.index.mobile = true;
+
+      $timeout(function() {
+        $scope.index.menuReady = true;
+      });
 
     } else {
       $scope.index.mobile = false;
+      $scope.index.menuReady = false;
+      $scope.index.menuActive = false;
     }
 
     console.log('Mobile = ' + $scope.index.mobile);
@@ -82,14 +89,17 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window)
   $window.onresize = function() {
     var width = window.innerWidth;
 
-    if( width <= 768 ) {
+    if( width <= 700 ) {
       $scope.$apply(function() {
         $scope.index.mobile = true;
+        $scope.index.menuReady = true;
       });
 
     } else {
       $scope.$apply(function() {
         $scope.index.mobile = false;
+        $scope.index.menuReady = false;
+        $scope.index.menuActive = false;
       });
     }
 
@@ -98,7 +108,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window)
 });
 
 
-// capitalize first letter of str
+// CAPITALIZE FIRST LETTER OF STR
 app.filter('capitalize', function() {
   return function(str) {
     return str.substring(0,1).toUpperCase() + str.substring(1);

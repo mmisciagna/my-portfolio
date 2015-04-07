@@ -1,4 +1,6 @@
 &.mobile {
+  font-size: 13px;
+
   #nav-bar {
     height: 56px;
     overflow: visible;
@@ -42,9 +44,12 @@
       padding-top: 72px;
       position: absolute;
       top: 56px;
-      @include transition;
       @include translate(100%,0);
       width: 100%;
+
+      &[menu-ready="true"] {
+        @include transition;
+      }
 
       &.menuActive {
         @include translate(0,0);
@@ -81,4 +86,46 @@
       }
     }
   }
+
+  // 
+  // view
+  // 
+  #view {
+    height: calc(100% - 56px);
+    overflow: hidden;
+    padding: 0;
+
+    header {
+      padding: $inner-padding-mobile;
+      text-align: right;
+    }
+
+    main {
+      height: calc(100% - 71px);
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 0 $inner-padding-mobile $inner-padding-mobile;
+    }
+  }
+
+  // 
+  // Home
+  // 
+  #home {
+    &.table {
+      display: block;
+
+      h1 {
+        display: block;
+        padding: 0;
+        text-align: right;
+      }
+    }
+  }
 }
+
+
+
+
+
+

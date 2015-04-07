@@ -11,6 +11,8 @@ $teal-drk: #00bea4;
 $teal-lgt: #1ce8b5;
 $outer-padding: 20px;
 $inner-padding: 20px;
+$outer-padding-mobile: 24px;
+$inner-padding-mobile: 24px;
 
 @mixin transition($prop: all, $time: .2s, $easing: cubic-bezier(0.4, 0.0, 0.2, 1)) {
 	-ms-transition: $prop $time $easing;
@@ -106,7 +108,7 @@ a {
 	height: 100%;
 	width: 100%;
 
-	.cell {
+	.table-cell {
 		display: table-cell;
 		vertical-align: middle;
 	}
@@ -171,7 +173,8 @@ body {
 
 		h3 {
 			border-bottom: 1px solid;
-			max-width: 152px;
+			display: inline-block;
+			width: 152px;
 		}
 	}
 
@@ -190,7 +193,6 @@ body {
 	}
 
 	h1 {
-		@include break-word;
 		padding: 0 $inner-padding * 2;
 
 	}

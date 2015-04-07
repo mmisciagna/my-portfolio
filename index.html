@@ -17,26 +17,26 @@
 	<div id="nav-bar" class="cf">
 		<header>
 			<a href="#/home" 
-				class="logo" 
-				ng-class="{menuActive:index.menuActive}"
-				ng-click="index.menuActive = !index.menuActive">
+				 class="logo" 
+				 ng-class="{menuActive:index.menuActive}">
 			</a>
 
 			<a class="menu-btn" 
-				ng-if="index.mobile"
-				ng-class="{menuActive:index.menuActive}" 
-				ng-click="index.menuActive = !index.menuActive">
+				 ng-if="index.mobile"
+				 ng-class="{menuActive:index.menuActive}" 
+				 ng-click="index.menuActive = !index.menuActive">
 			</a>
 		</header>
 
-		<nav ng-class="{menuActive:index.menuActive}">
+		<nav ng-class="{menuActive:index.menuActive}"
+				 menu-ready="{{index.menuReady}}">
 			<ul>
 				<li ng-repeat="item in index.nav" 
-					ng-class="{active:index.setActive('/{{item.label}}')}">
+					  ng-class="{active:index.setActive('/{{item.label}}')}">
 
 					<a href="#/{{item.label}}" 
-						ng-class="{carets:index.desktop}" 
-						ng-click="index.menuActive = !index.menuActive">
+						 ng-class="{carets:index.desktop}" 
+						 ng-click="index.menuActive = !index.menuActive">
 						{{item.label | capitalize}}
 					</a>
 				</li>
