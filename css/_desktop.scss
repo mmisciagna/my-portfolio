@@ -1,12 +1,4 @@
 &.desktop {
-  a {
-    @include transition;
-
-    &:hover {
-      color: $blueGray-drk;
-    }
-  }
-
   #nav-bar {
     float: left;
     height: 100%;
@@ -56,14 +48,6 @@
         }
 
         a {
-          &:hover {
-            color: $teal-lgt;
-          }
-
-          &.active:hover {
-            color: $blueGray-drk;
-          }
-
           &:before {
             @include content;
             border: 12px solid transparent;
@@ -127,14 +111,6 @@
         }
 
         a {
-          &:hover {
-            color: $teal-lgt;
-          }
-
-          &.active:hover {
-            color: $blueGray-drk;
-          }
-
           &:before {
             border-right-color: $gray-lgt;
             border-top-color: $gray-lgt;
@@ -145,6 +121,35 @@
             border-bottom-color: $gray-lgt;
             border-right-color: $gray-lgt;
             bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 
+// hover states
+// 
+&.no_touch {
+  a {
+    @include transition;
+
+    &:hover {
+      color: $blueGray-drk;
+    }
+  }
+
+  #nav-bar {
+    nav {
+      li{
+        a {
+          &:hover {
+            color: $teal-lgt;
+          }
+
+          &.active:hover {
+            color: $blueGray-drk;
           }
         }
       }

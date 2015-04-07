@@ -54,12 +54,11 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
 
 
   // DEVICE DETECTION
-  if( deviceDetector.device == 'unknown' &&  window.innerWidth <= 768 ) {
-    $scope.index.mobile = false;
+  if( deviceDetector.device == 'unknown') {
+    $scope.index.noTouch = true;
 
   } else {
-    $scope.index.mobile = true;
-    $scope.index.menuReady = false;
+    $scope.index.noTouch = false;
   }
 
 
@@ -69,7 +68,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
     return window.innerWidth;
 
   }, function(width) {
-    if( width <= 768 ) {
+    if( width <= 600 ) {
       $scope.index.mobile = true;
 
       $timeout(function() {
@@ -89,7 +88,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
   $window.onresize = function() {
     var width = window.innerWidth;
 
-    if( width <= 768 ) {
+    if( width <= 600 ) {
       $scope.$apply(function() {
         $scope.index.mobile = true;
         $scope.index.menuReady = true;
