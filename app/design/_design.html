@@ -1,3 +1,18 @@
 <header>
 	<h3>Design</h3>
 </header>
+
+<main id="design">
+  <ul class="work-list">
+    <li class="list-item cf" ng-repeat="item in design.designs">
+      <div class="title">
+        <h2>{{item.title}}</h2>
+      </div> <!-- .title -->
+
+      <div class="thumb">
+        <img ng-src="../imgs/designs/{{item.thumb[0].src}}" border="0" 
+             alt="{{item.thumb[0].alt}}" />
+      </div> <!-- .thumb -->
+    </li>
+  </ul> <!-- .work-list -->
+</main>

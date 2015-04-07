@@ -1,5 +1,5 @@
 var code = angular.module('code', []);
 
-home.controller('CodeCtrl', function($rootScope) {
+code.controller('CodeCtrl', function($rootScope) {
 	$rootScope.bgColor = 'light';
 });

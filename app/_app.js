@@ -80,8 +80,6 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
       $scope.index.menuReady = false;
       $scope.index.menuActive = false;
     }
-
-    console.log('Mobile = ' + $scope.index.mobile);
   });
 
   // on resize
@@ -91,7 +89,10 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
     if( width <= 600 ) {
       $scope.$apply(function() {
         $scope.index.mobile = true;
-        $scope.index.menuReady = true;
+
+        $timeout(function() {
+          $scope.index.menuReady = true;
+        });
       });
 
     } else {
@@ -101,8 +102,6 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
         $scope.index.menuActive = false;
       });
     }
-
-    console.log('Mobile = ' + $scope.index.mobile);
   };
 });
 

@@ -46,6 +46,10 @@ a {
   a:focus {
     outline: none; }
 
+img {
+  max-width: 100%;
+  vertical-align: middle; }
+
 .table {
   display: table;
   height: 100%;
@@ -53,6 +57,16 @@ a {
   .table .table-cell {
     display: table-cell;
     vertical-align: middle; }
+
+::-moz-selection {
+  background: #00bea4;
+  color: #e0e0e0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1); }
+
+::selection {
+  background: #00bea4;
+  color: #e0e0e0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1); }
 
 #nav-bar {
   background: #253137; }
@@ -302,9 +316,29 @@ body {
     padding: 20px; }
 
 /* ==========================================================================
-   home
+   HOME
 ========================================================================== */
 #home.table {
   height: 50%; }
+
+/* ==========================================================================
+   DESIGN
+========================================================================== */
+#design ul.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  #design ul.work-list li.list-item {
+    border-top: 1px solid #c1c1c1;
+    margin: 20px 0;
+    padding: 40px 0; }
+    #design ul.work-list li.list-item:first-child {
+      border: none;
+      margin-top: 0;
+      padding-top: 0; }
+    #design ul.work-list li.list-item .thumb {
+      text-align: center; }
+      #design ul.work-list li.list-item .thumb img {
+        max-height: 240px; }
 
 /*# sourceMappingURL=style.css.map */
