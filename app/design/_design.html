@@ -9,8 +9,10 @@
         <a href="{{item.link}}" target="_blank" ng-if="item.link">
           {{item.title}}
           <svg>
-            <path d="M22 2v20H2V2H22M24 0H0v24h24V0L24 0z"/>
-            <rect x="8" y="0" width="16" height="16"/>
+            <polygon points="22,10 22,22 2,22 2,2 14,2 14,0 0,0 0,24 24,24 24,10"/>
+            <rect x="16" y="0" width="8" height="2"/>
+            <rect x="22" y="0" width="2" height="8"/>
+            <rect x="13.1" y="3.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 2.0797 14.9203)" width="12" height="2"/>
           </svg>
         </a>
 
@@ -30,8 +32,10 @@
             <a href="{{item.link}}" target="_blank" ng-if="item.link">
               {{item.title}}
               <svg>
-                <path d="M22 2v20H2V2H22M24 0H0v24h24V0L24 0z"/>
-                <rect x="8" y="0" width="16" height="16"/>
+                <polygon points="22,10 22,22 2,22 2,2 14,2 14,0 0,0 0,24 24,24 24,10"/>
+                <rect x="16" y="0" width="8" height="2"/>
+                <rect x="22" y="0" width="2" height="8"/>
+                <rect x="13.1" y="3.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 2.0797 14.9203)" width="12" height="2"/>
               </svg>
             </a>
 
@@ -57,9 +61,7 @@
             </p>
           </div> <!-- .write-up -->
 
-          <div class="process">
-            <h3>Process</h3>
-          </div> <!-- .process -->
+          <a class="button process">My process</a> <!-- .process -->
         </div> <!-- .details -->
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->

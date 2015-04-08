@@ -4,7 +4,7 @@ design.factory('Designs', function() {
   designs.items = [
     {
       title: 'AngularDart.org',
-      link: 'http://www.michaelmisciagna.com',
+      link: 'http://www.angulardart.org',
       thumb: [
         {
           src: 'thumb_angularDart.png',
@@ -19,7 +19,7 @@ design.factory('Designs', function() {
 
     {
       title: 'gAnswers',
-      link: 'http://www.google.com',
+      link: 'https://x20web.corp.google.com/~mmisciagna/ganswers/site/index.html',
       thumb: [
         {
           src: 'thumb_gAnswers.svg',
