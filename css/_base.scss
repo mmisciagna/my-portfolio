@@ -119,19 +119,6 @@ img {
 	}
 }
 
-::-moz-selection {
-	background: $teal-drk;
-	color: $gray-lgt;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.1);
-}
-
-::selection {
-	background: $teal-drk;
-	color: $gray-lgt;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.1);
-}
-
-
 @import '_navbar';
 
 
@@ -143,17 +130,35 @@ body {
 	background: $blueGray-lgt;
 	color: $gray-lgt;
 
+	::-moz-selection {
+		color: $gray-lgt;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+	}
+
+	::selection {
+		color: $gray-lgt;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+	}
+
 	// 
 	// dark bg
 	// 
 	&.dark {
-	  h3 {
+		header {
 	    color: $blueGray-med;
-	  }
+		}
 
 	  a {
 	    color: $teal-lgt;
 	  }
+
+	  ::-moz-selection {
+			background: $teal-lgt;
+		}
+
+		::selection {
+			background: $teal-lgt;
+		}
 	}
 
 	// 
@@ -163,13 +168,21 @@ body {
 	  background: $gray-lgt;
 	  color: $blueGray-med;
 
-	  h3 {
+	  header {
 	    color: $gray-med;
-	  }
+		}
 
 	  a {
 	    color: $teal-drk;
 	  }
+
+	  ::-moz-selection {
+			background: $teal-drk;
+		}
+
+		::selection {
+			background: $teal-drk;
+		}
 	}
 
 	@import '_desktop';
@@ -234,7 +247,14 @@ body {
 
 				.title {
 					a {
+						color: inherit;
 
+						svg {
+							height: 24px;
+							width: 24px;
+							fill: $teal-drk;
+							@include transition;
+						}
 					}
 				}
 

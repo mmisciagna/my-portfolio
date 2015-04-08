@@ -160,6 +160,11 @@
     .work-list {
       .title {
         a:hover {
+          color: $blueGray-drk;
+
+          svg {
+            fill: $blueGray-drk;
+          }
         }
       }
     }

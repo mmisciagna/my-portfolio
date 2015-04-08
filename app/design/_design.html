@@ -6,8 +6,17 @@
   <ul class="work-list">
     <li class="cf" ng-repeat="item in design.designs">
       <h2 class="title" ng-if="index.mobile">
-        {{item.title}} 
-        <a href="{{item.link}}" target="_blank" ng-if="item.link"></a>
+        <a href="{{item.link}}" target="_blank" ng-if="item.link">
+          {{item.title}}
+          <svg>
+            <path d="M22 2v20H2V2H22M24 0H0v24h24V0L24 0z"/>
+            <rect x="8" y="0" width="16" height="16"/>
+          </svg>
+        </a>
+
+        <span ng-if="!item.link">
+          {{item.title}}
+        </span>
       </h2> <!-- .title for mobile-->
 
       <div class="thumb">
@@ -18,8 +27,17 @@
 
         <div class="details">
           <h2 class="title" ng-if="!index.mobile">
-            {{item.title}} 
-            <a href="{{item.link}}" target="_blank" ng-if="item.link"></a>
+            <a href="{{item.link}}" target="_blank" ng-if="item.link">
+              {{item.title}}
+              <svg>
+                <path d="M22 2v20H2V2H22M24 0H0v24h24V0L24 0z"/>
+                <rect x="8" y="0" width="16" height="16"/>
+              </svg>
+            </a>
+
+            <span ng-if="!item.link">
+              {{item.title}}
+            </span>
           </h2> <!-- .title for desktop-->
 
           <div class="write-up">
@@ -38,6 +56,10 @@
               <span>{{item.solution}}</span>
             </p>
           </div> <!-- .write-up -->
+
+          <div class="process">
+            <h3>Process</h3>
+          </div> <!-- .process -->
         </div> <!-- .details -->
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
