@@ -22,8 +22,8 @@
       </h2> <!-- .title for mobile-->
 
       <div class="thumb">
-        <img ng-src="../imgs/designs/{{item.thumb[0].src}}" border="0" 
-             alt="{{item.thumb[0].alt}}" />
+        <img ng-src="../imgs/designs/{{item.src}}" border="0" 
+             alt="{{item.alt}}" />
       </div> <!-- .thumb -->
 
 
@@ -45,23 +45,31 @@
           </h2> <!-- .title for desktop-->
 
           <div class="write-up">
-            <p>
+            <p class="cf">
               <strong>Role:</strong>
               <span>{{item.role}}</span>
             </p>
 
-            <p>
+            <p class="cf">
               <strong>Goal:</strong>
               <span>{{item.goal}}</span>
             </p>
 
-            <p>
+            <p class="cf">
               <strong>Solution:</strong>
               <span>{{item.solution}}</span>
             </p>
           </div> <!-- .write-up -->
 
-          <a class="button process">My process</a> <!-- .process -->
+          <div class="gallery-radios">
+            <h3>Gallery</h3>
+
+            <div class="radios">
+              <a class="button" ng-repeat="gal_item in item.gallery">
+                {{$index + 1}}
+              </a>
+            </div> <!-- .radios -->
+          </div> <!-- .gallery-radios -->
         </div> <!-- .details -->
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->

@@ -101,6 +101,13 @@ a {
 	&:focus {
 		outline: none;
 	}
+
+	&.button {
+		display: inline-block;
+		font-size: 1em;
+		padding: 12px 32px;
+		text-align: center;
+	}
 }
 
 img {
@@ -150,6 +157,11 @@ body {
 
 	  a {
 	    color: $teal-lgt;
+
+	    &.button {
+	    	background: $teal-lgt;
+	    	color: $gray-lgt;
+	    }
 	  }
 
 	  ::-moz-selection {
@@ -174,6 +186,11 @@ body {
 
 	  a {
 	    color: $teal-drk;
+
+	    &.button {
+	    	background: $teal-drk;
+	    	color: $gray-lgt;
+	    }
 	  }
 
 	  ::-moz-selection {
@@ -236,8 +253,8 @@ body {
 
 			li {
 				border-top: 1px solid $gray-med;
-				margin: 20px 0;
-				padding: 40px 0;
+				margin-top: 40px;
+				padding-top: 40px;
 
 				&:first-child {
 					border: none;
@@ -246,6 +263,9 @@ body {
 				}
 
 				.title {
+					@include break-word;
+					margin-bottom: 24px;
+
 					a {
 						color: inherit;
 
@@ -259,10 +279,39 @@ body {
 				}
 
 				.thumb {
-					text-align: center;
+					width: 100%;
 
 					img {
-						max-height: 240px;
+						max-width: 304px;
+						width: 100%;
+					}
+				}
+
+				.details {
+					max-width: 650px;
+
+					.write-up {
+						margin-bottom: 24px;
+
+						p {
+							margin: 0;
+						}
+					}
+				}
+
+				.gallery-radios {
+          .radios {
+            display: flex;
+            flex-wrap: wrap;
+
+						a {
+							&.button {
+								line-height: 40px;
+								padding: 0;
+								margin: 8px 8px 0 0;
+								width: 40px;
+							}
+						}
 					}
 				}
 			}

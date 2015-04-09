@@ -130,7 +130,39 @@
     ul {
       &.work-list {
         li {
+          margin-top: 24px;
+          padding-top: 24px;
+
+          &:first-child {
+            margin-top: 0;
+            padding-top: 0;
+          }
+
           .title {
+            margin-bottom: 12px;
+          }
+
+          .details {
+            .write-up {
+              p {
+                margin: 1em 0;
+
+                strong {
+                  display: block;
+                }
+              }
+            }
+          }
+          .gallery-radios {
+            .radios {
+              a {
+                &.button {
+                  font-size: 2em;
+                  line-height: 48px;
+                  width: 48px;
+                }
+              }
+            }
           }
         }
       }

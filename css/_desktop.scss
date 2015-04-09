@@ -126,6 +126,48 @@
       }
     }
   }
+
+  // 
+  // desktop Design page
+  // 
+  #design {
+    ul {
+      &.work-list {
+        li {
+          .thumb {
+            float: left;
+            text-align: center;
+            width: 304px;
+          }
+
+          .details {
+            float: left;
+            margin-left: 32px;
+            width: calc(100% - 304px - 32px);
+
+            .write-up {
+              p {
+                strong {
+                  color: $gray-med;
+                  display: block;
+                  float: left;
+                  text-align: right;
+                  width: 17%;
+                }
+
+                span {
+                  display: block;
+                  float: left;
+                  padding-left: 8px;
+                  width: 83%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // 
@@ -137,6 +179,11 @@
 
     &:hover {
       color: $blueGray-drk;
+    }
+
+    &.button:hover {
+      background: $teal-lgt;
+      color: $gray-lgt;
     }
   }
 
