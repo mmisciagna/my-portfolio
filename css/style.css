@@ -246,12 +246,14 @@ body {
       display: block;
       float: left;
       text-align: right;
-      width: 17%; }
+      width: 64px; }
     body.desktop #design ul.work-list li .details .write-up p span {
       display: block;
       float: left;
       padding-left: 8px;
-      width: 83%; }
+      width: calc(100% - 64px); }
+    body.desktop #design ul.work-list li .details .gallery-radios {
+      padding-left: 72px; }
   body.no_touch a {
     -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);

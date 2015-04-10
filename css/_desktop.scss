@@ -152,16 +152,20 @@
                   display: block;
                   float: left;
                   text-align: right;
-                  width: 17%;
+                  width: 64px;
                 }
 
                 span {
                   display: block;
                   float: left;
                   padding-left: 8px;
-                  width: 83%;
+                  width: calc(100% - 64px);
                 }
               }
+            }
+
+            .gallery-radios {
+              padding-left: 72px;
             }
           }
         }
