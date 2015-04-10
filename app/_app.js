@@ -68,7 +68,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
     return window.innerWidth;
 
   }, function(width) {
-    if( width <= 800 ) {
+    if( width <= 640 ) {
       $scope.index.mobile = true;
 
       $timeout(function() {
@@ -86,7 +86,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
   $window.onresize = function() {
     var width = window.innerWidth;
 
-    if( width <= 800 ) {
+    if( width <= 640 ) {
       $scope.$apply(function() {
         $scope.index.mobile = true;
 

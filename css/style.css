@@ -433,4 +433,18 @@ body {
         margin: 8px 8px 0 0;
         width: 40px; }
 
+/* ==========================================================================
+   media queries
+========================================================================== */
+@media only screen and (min-width: 640px) and (max-width: 860px) {
+  body.desktop #design ul.work-list li .thumb,
+  body.desktop #design ul.work-list li .details,
+  body.mobile #design ul.work-list li .thumb,
+  body.mobile #design ul.work-list li .details {
+    float: none;
+    width: 100%; }
+  body.desktop #design ul.work-list li .details,
+  body.mobile #design ul.work-list li .details {
+    margin: 32px 0 0; } }
+
 /*# sourceMappingURL=style.css.map */
