@@ -237,6 +237,8 @@ body {
 #home {
 	&.table {
 		height: 50%;
+		margin: 0 auto;
+		max-width: 1250px;
 	}
 }
 
@@ -275,15 +277,6 @@ body {
 							fill: $teal-drk;
 							@include transition;
 						}
-					}
-				}
-
-				.thumb {
-					width: 100%;
-
-					img {
-						max-width: 304px;
-						width: 100%;
 					}
 				}
 

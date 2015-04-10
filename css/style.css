@@ -239,8 +239,8 @@ body {
     width: 304px; }
   body.desktop #design ul.work-list li .details {
     float: left;
-    margin-left: 32px;
-    width: calc(100% - 304px - 32px); }
+    padding-left: 32px;
+    width: calc(100% - 304px); }
     body.desktop #design ul.work-list li .details .write-up p strong {
       color: #c1c1c1;
       display: block;
@@ -378,7 +378,9 @@ body {
    HOME
 ========================================================================== */
 #home.table {
-  height: 50%; }
+  height: 50%;
+  margin: 0 auto;
+  max-width: 1250px; }
 
 /* ==========================================================================
    DESIGN
@@ -413,11 +415,6 @@ body {
           -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-    #design ul.work-list li .thumb {
-      width: 100%; }
-      #design ul.work-list li .thumb img {
-        max-width: 304px;
-        width: 100%; }
     #design ul.work-list li .details {
       max-width: 650px; }
       #design ul.work-list li .details .write-up {
@@ -436,12 +433,24 @@ body {
 /* ==========================================================================
    media queries
 ========================================================================== */
+@media only screen and (min-width: 1500px) {
+  body.desktop #design ul.work-list li .thumb,
+  body.mobile #design ul.work-list li .thumb {
+    width: 40%; }
+    body.desktop #design ul.work-list li .thumb img,
+    body.mobile #design ul.work-list li .thumb img {
+      max-width: 500px; }
+  body.desktop #design ul.work-list li .details,
+  body.mobile #design ul.work-list li .details {
+    max-width: none;
+    width: 60%; } }
 @media only screen and (min-width: 640px) and (max-width: 860px) {
   body.desktop #design ul.work-list li .thumb,
   body.desktop #design ul.work-list li .details,
   body.mobile #design ul.work-list li .thumb,
   body.mobile #design ul.work-list li .details {
     float: none;
+    padding: 0;
     width: 100%; }
   body.desktop #design ul.work-list li .details,
   body.mobile #design ul.work-list li .details {

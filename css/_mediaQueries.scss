@@ -1,3 +1,29 @@
+@media only screen and (min-width: 1500px) {
+	body.desktop,
+	body.mobile {
+		#design {
+	    ul {
+	      &.work-list {
+	        li {
+	          .thumb {
+	            width: 40%;
+
+	            img {
+	            	max-width: 500px;
+	            }
+	          }
+
+	          .details {
+	          	max-width: none;
+	          	width: 60%;
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
+}
+
 @media only screen and (min-width: 640px) and (max-width: 860px) {
 	body.desktop,
 	body.mobile {
@@ -8,6 +34,7 @@
 	          .thumb,
 	          .details {
 	            float: none;
+	            padding: 0;
 	            width: 100%;
 	          }
 

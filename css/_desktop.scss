@@ -142,8 +142,8 @@
 
           .details {
             float: left;
-            margin-left: 32px;
-            width: calc(100% - 304px - 32px);
+            padding-left: 32px;
+            width: calc(100% - 304px);
 
             .write-up {
               p {
