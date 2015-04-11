@@ -11,7 +11,9 @@
       a {
         &.logo {
           height: 107px;
-          position: relative;
+          position: absolute;
+          right: 24px;
+          top: 0;
           width: 80px;
           z-index: 1;
 
@@ -25,8 +27,8 @@
           background: url(../imgs/menu_triangle.svg) no-repeat;
           background-size: 100% !important;
           height: 24px;
+          left: 24px;
           position: absolute;
-          right: 24px;
           top: 16px;
           width: 24px;
 
@@ -44,7 +46,7 @@
       padding-top: 72px;
       position: absolute;
       top: 56px;
-      @include translate(100%,0);
+      @include translate(-100%,0);
       width: 100%;
 
       &[menu-ready="true"] {
@@ -97,7 +99,6 @@
 
     header {
       padding: $inner-padding-mobile;
-      text-align: right;
     }
 
     main {
@@ -117,8 +118,6 @@
 
       h1 {
         display: block;
-        padding: 0;
-        text-align: right;
       }
     }
   }

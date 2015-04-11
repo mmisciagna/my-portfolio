@@ -236,11 +236,11 @@ body {
   body.desktop #design ul.work-list li .thumb {
     float: left;
     text-align: center;
-    width: 304px; }
+    width: 40%; }
   body.desktop #design ul.work-list li .details {
     float: left;
     padding-left: 32px;
-    width: calc(100% - 304px); }
+    width: 60%; }
     body.desktop #design ul.work-list li .details .write-up p strong {
       color: #c1c1c1;
       display: block;
@@ -281,7 +281,9 @@ body {
         padding: 0 24px; }
         body.mobile #nav-bar header a.logo {
           height: 107px;
-          position: relative;
+          position: absolute;
+          right: 24px;
+          top: 0;
           width: 80px;
           z-index: 1; }
           body.mobile #nav-bar header a.logo.menuActive {
@@ -291,8 +293,8 @@ body {
           background: url(../imgs/menu_triangle.svg) no-repeat;
           background-size: 100% !important;
           height: 24px;
+          left: 24px;
           position: absolute;
-          right: 24px;
           top: 16px;
           width: 24px; }
           body.mobile #nav-bar header a.menu-btn.menuActive {
@@ -304,10 +306,10 @@ body {
         padding-top: 72px;
         position: absolute;
         top: 56px;
-        -ms-transform: translate(100%, 0);
-        -moz-transform: translate(100%, 0);
-        -webkit-transform: translate(100%, 0);
-        transform: translate(100%, 0);
+        -ms-transform: translate(-100%, 0);
+        -moz-transform: translate(-100%, 0);
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0);
         width: 100%; }
         body.mobile #nav-bar nav[menu-ready="true"] {
           -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -328,8 +330,7 @@ body {
       overflow: hidden;
       padding: 0; }
       body.mobile #view header {
-        padding: 24px;
-        text-align: right; }
+        padding: 24px; }
       body.mobile #view main {
         height: calc(100% - 71px);
         overflow: hidden;
@@ -338,9 +339,7 @@ body {
     body.mobile #home.table {
       display: block; }
       body.mobile #home.table h1 {
-        display: block;
-        padding: 0;
-        text-align: right; }
+        display: block; }
     body.mobile #design ul.work-list li {
       margin-top: 24px;
       padding-top: 24px; }
@@ -415,12 +414,13 @@ body {
           -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-    #design ul.work-list li .details {
-      max-width: 650px; }
-      #design ul.work-list li .details .write-up {
-        margin-bottom: 24px; }
-        #design ul.work-list li .details .write-up p {
-          margin: 0; }
+    #design ul.work-list li .thumb img {
+      max-width: 304px;
+      width: 100%; }
+    #design ul.work-list li .details .write-up {
+      margin-bottom: 24px; }
+      #design ul.work-list li .details .write-up p {
+        margin: 0; }
     #design ul.work-list li .gallery-radios .radios {
       display: flex;
       flex-wrap: wrap; }
@@ -434,16 +434,9 @@ body {
    media queries
 ========================================================================== */
 @media only screen and (min-width: 1500px) {
-  body.desktop #design ul.work-list li .thumb,
-  body.mobile #design ul.work-list li .thumb {
-    width: 40%; }
-    body.desktop #design ul.work-list li .thumb img,
-    body.mobile #design ul.work-list li .thumb img {
-      max-width: 500px; }
-  body.desktop #design ul.work-list li .details,
-  body.mobile #design ul.work-list li .details {
-    max-width: none;
-    width: 60%; } }
+  body.desktop #design ul.work-list li .thumb img,
+  body.mobile #design ul.work-list li .thumb img {
+    max-width: 500px; } }
 @media only screen and (min-width: 640px) and (max-width: 860px) {
   body.desktop #design ul.work-list li .thumb,
   body.desktop #design ul.work-list li .details,

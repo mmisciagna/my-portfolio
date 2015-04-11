@@ -280,8 +280,15 @@ body {
 					}
 				}
 
+				.thumb {
+					img {
+						max-width: 304px;
+						width: 100%;
+					}
+				}
+
 				.details {
-					max-width: 650px;
+					// max-width: 650px;
 
 					.write-up {
 						margin-bottom: 24px;
