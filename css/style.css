@@ -301,9 +301,7 @@ body {
             background: url(../imgs/menu_x.svg) no-repeat; }
       body.mobile #nav-bar nav {
         background: #253137;
-        border-top: 1px solid #445963;
         min-height: calc(100% - 56px);
-        padding-top: 72px;
         position: absolute;
         top: 56px;
         -ms-transform: translate(-100%, 0);

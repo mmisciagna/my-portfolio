@@ -41,9 +41,7 @@
 
     nav {
       background: $blueGray-drk;
-      border-top: 1px solid $blueGray-med;
       min-height: calc(100% - 56px);
-      padding-top: 72px;
       position: absolute;
       top: 56px;
       @include translate(-100%,0);
