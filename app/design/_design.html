@@ -26,51 +26,50 @@
              alt="{{item.alt}}" />
       </div> <!-- .thumb -->
 
+      <div class="details">
+        <h2 class="title" ng-if="!index.mobile">
+          <a href="{{item.link}}" target="_blank" ng-if="item.link">
+            {{item.title}}
+            <svg>
+              <polygon points="22,10 22,22 2,22 2,2 14,2 14,0 0,0 0,24 24,24 24,10"/>
+              <rect x="16" y="0" width="8" height="2"/>
+              <rect x="22" y="0" width="2" height="8"/>
+              <rect x="13.1" y="3.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 2.0797 14.9203)" width="12" height="2"/>
+            </svg>
+          </a>
 
-        <div class="details">
-          <h2 class="title" ng-if="!index.mobile">
-            <a href="{{item.link}}" target="_blank" ng-if="item.link">
-              {{item.title}}
-              <svg>
-                <polygon points="22,10 22,22 2,22 2,2 14,2 14,0 0,0 0,24 24,24 24,10"/>
-                <rect x="16" y="0" width="8" height="2"/>
-                <rect x="22" y="0" width="2" height="8"/>
-                <rect x="13.1" y="3.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 2.0797 14.9203)" width="12" height="2"/>
-              </svg>
+          <span ng-if="!item.link">
+            {{item.title}}
+          </span>
+        </h2> <!-- .title for desktop-->
+
+        <div class="write-up">
+          <p class="cf">
+            <strong>Role:</strong>
+            <span>{{item.role}}</span>
+          </p>
+
+          <p class="cf">
+            <strong>Goal:</strong>
+            <span>{{item.goal}}</span>
+          </p>
+
+          <p class="cf">
+            <strong>Solution:</strong>
+            <span>{{item.solution}}</span>
+          </p>
+        </div> <!-- .write-up -->
+
+        <div class="gallery-radios">
+          <h3>Gallery</h3>
+
+          <div class="radios">
+            <a class="button" ng-repeat="gal_item in item.gallery">
+              {{$index + 1}}
             </a>
-
-            <span ng-if="!item.link">
-              {{item.title}}
-            </span>
-          </h2> <!-- .title for desktop-->
-
-          <div class="write-up">
-            <p class="cf">
-              <strong>Role:</strong>
-              <span>{{item.role}}</span>
-            </p>
-
-            <p class="cf">
-              <strong>Goal:</strong>
-              <span>{{item.goal}}</span>
-            </p>
-
-            <p class="cf">
-              <strong>Solution:</strong>
-              <span>{{item.solution}}</span>
-            </p>
-          </div> <!-- .write-up -->
-
-          <div class="gallery-radios">
-            <h3>Gallery</h3>
-
-            <div class="radios">
-              <a class="button" ng-repeat="gal_item in item.gallery">
-                {{$index + 1}}
-              </a>
-            </div> <!-- .radios -->
-          </div> <!-- .gallery-radios -->
-        </div> <!-- .details -->
+          </div> <!-- .radios -->
+        </div> <!-- .gallery-radios -->
+      </div> <!-- .details -->
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
 </main>

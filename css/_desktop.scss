@@ -1,4 +1,4 @@
-&.desktop {
+.desktop {
   #nav-bar {
     float: left;
     height: 100%;
@@ -128,9 +128,10 @@
   }
 
   // 
-  // desktop Design page
+  // DESIGN
   // 
-  #design {
+  #design,
+  #code {
     ul {
       &.work-list {
         li {
@@ -174,10 +175,10 @@
   }
 }
 
-// 
-// hover states
-// 
-&.no_touch {
+/* ==========================================================================
+   hover states
+========================================================================== */
+.no_touch {
   a {
     @include transition;
 
@@ -207,7 +208,8 @@
     }
   }
 
-  #design {
+  #design,
+  #code {
     .work-list {
       .title {
         a:hover {

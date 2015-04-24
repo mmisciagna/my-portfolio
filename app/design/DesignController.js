@@ -1,7 +1,9 @@
-var design = angular.module('design', []);
+var designGallery = angular.module('designGallery', []);
 
-design.controller('DesignCtrl', function($rootScope, Designs) {
+designGallery.controller('DesignCtrl', function($rootScope, Designs) {
 	$rootScope.bgColor = 'light';
 
-  this.designs = Designs.items;
+	var design = this;
+
+  design.designs = Designs.items;
 });

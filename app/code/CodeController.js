@@ -1,5 +1,9 @@
-var code = angular.module('code', []);
+var codeGallery = angular.module('codeGallery', []);
 
-code.controller('CodeCtrl', function($rootScope) {
+codeGallery.controller('CodeCtrl', function($rootScope, $scope, Code) {
 	$rootScope.bgColor = 'light';
+
+	var code = this;
+
+  code.code = Code.items;
 });

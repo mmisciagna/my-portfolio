@@ -1,4 +1,4 @@
-&.mobile {
+.mobile {
   font-size: 13px;
 
   #nav-bar {
@@ -42,6 +42,7 @@
     nav {
       background: $blueGray-drk;
       min-height: calc(100% - 56px);
+      padding-top: 72px;
       position: absolute;
       top: 56px;
       @include translate(-100%,0);
@@ -108,7 +109,7 @@
   }
 
   // 
-  // Home
+  // HOME
   // 
   #home {
     &.table {
@@ -121,9 +122,10 @@
   }
 
   // 
-  // Design
+  // DESIGN & CODE
   // 
-  #design {
+  #design,
+  #code {
     ul {
       &.work-list {
         li {

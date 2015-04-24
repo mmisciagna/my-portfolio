@@ -3,31 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" 
+<meta name="description"
 			content="The web design/development portfolio of Michael Misciagna">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Michael M. Portfolio</title>
-<link rel='stylesheet' 
+<link rel='stylesheet'
 			href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600'>
 <link rel="icon" href="imgs/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-class="{dark:bgColor=='dark', light:bgColor=='light', 
+<body ng-class="{dark:bgColor=='dark', light:bgColor=='light',
 								 desktop:!index.mobile, mobile:index.mobile,
 								 no_touch:index.noTouch}">
+								
 
 	<div id="nav-bar" class="cf">
 		<header>
-			<a href="#/home" 
-				 class="logo" 
+			<a href="#/home"
+				 class="logo"
 				 ng-class="{menuActive:index.menuActive}"
 				 ng-click="index.menuActive = false">
 			</a> <!-- .logo -->
 
-			<a class="menu-btn" 
+			<a class="menu-btn"
 				 ng-if="index.mobile"
-				 ng-class="{menuActive:index.menuActive}" 
+				 ng-class="{menuActive:index.menuActive}"
 				 ng-click="index.menuActive = !index.menuActive">
 			</a> <!-- .menu-btn -->
 		</header>
@@ -35,11 +36,11 @@
 		<nav ng-class="{menuActive:index.menuActive}"
 				 menu-ready="{{index.menuReady}}">
 			<ul>
-				<li ng-repeat="item in index.nav" 
+				<li ng-repeat="item in index.nav"
 					  ng-class="{active:index.setActive('/{{item.label}}')}">
 
-					<a href="#/{{item.label}}" 
-						 ng-class="{carets:index.desktop}" 
+					<a href="#/{{item.label}}"
+						 ng-class="{carets:index.desktop}"
 						 ng-click="index.menuActive = !index.menuActive">
 						{{item.label | capitalize}}
 					</a>
@@ -50,14 +51,15 @@
 
 	<div id="view" ng-view></div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-	<script src="//code.angularjs.org/1.3.14/angular-route.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="//code.angularjs.org/1.3.15/angular-route.min.js"></script>
 	<script src="bower_components/ng-device-detector/ng-device-detector.min.js"></script>
 	<script src="app/_app.js"></script>
 	<script src="app/home/HomeController.js"></script>
 	<script src="app/design/DesignController.js"></script>
 	<script src="app/design/DesignFactory.js"></script>
 	<script src="app/code/CodeController.js"></script>
+	<script src="app/code/CodeFactory.js"></script>
 	<script src="app/about/AboutController.js"></script>
 	<script src="app/contact/ContactController.js"></script>
 </body>

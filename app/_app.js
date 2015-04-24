@@ -2,8 +2,8 @@ var app = angular.module('app', [
     'ng.deviceDetector',
 		'ngRoute',
 		'home', 
-		'design', 
-		'code', 
+		'designGallery', 
+		'codeGallery', 
 		'about', 
 		'contact'
 	]);
@@ -38,8 +38,10 @@ app.config(function($routeProvider) {
 
 app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
                                      $timeout) {
+  var index = this;
+
   // NAV & BG COLOR
-  this.nav = [
+  index.nav = [
     {label: 'home'},
     {label: 'design'},
     {label: 'code'},
@@ -48,7 +50,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
   ];
 
   // set active nav
-  this.setActive = function(path) {
+  index.setActive = function(path) {
     return path === $location.path();
   }
 

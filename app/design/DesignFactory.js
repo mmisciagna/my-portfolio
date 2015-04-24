@@ -1,4 +1,4 @@
-design.factory('Designs', function() {
+designGallery.factory('Designs', function() {
   var designs = {};
 
   designs.items = [
