@@ -15,7 +15,7 @@
           right: 24px;
           top: 0;
           width: 80px;
-          z-index: 1;
+          z-index: 100;
 
           &.menuActive {
             background: url(../imgs/logo_dark.png) no-repeat !important;
@@ -47,6 +47,7 @@
       top: 56px;
       @include translate(-100%,0);
       width: 100%;
+      z-index: 1;
 
       &[menu-ready="true"] {
         @include transition;
@@ -56,6 +57,11 @@
         @include translate(0,0);
       }
     }
+  }
+
+  .button {
+    padding: 12px 32px;
+    width: 100%;
   }
 
 // 
@@ -139,6 +145,7 @@
 
           .title {
             margin-bottom: 12px;
+            margin-left: 0;
           }
 
           .details {
@@ -148,6 +155,10 @@
 
                 strong {
                   display: block;
+                }
+
+                .button {
+                  margin-left: 0;
                 }
               }
             }
