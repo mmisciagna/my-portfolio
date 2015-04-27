@@ -205,12 +205,17 @@ body {
 
 
 /* ==========================================================================
-   sections
+   view
 ========================================================================== */
 #view {
 	overflow: hidden;
 	overflow-y: auto;
 	padding: $outer-padding;
+	position: relative;
+
+	&.noScroll {
+		overflow: hidden !important;
+	}
 
 	header {
 		padding: $inner-padding;
@@ -224,6 +229,29 @@ body {
 
 	main {
 		padding: $inner-padding;
+	}
+
+	.overlay {
+		background: $blueGray-drk;
+		height: 100%;
+		left: 0;
+		opacity: .8;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.modal {
+		background: $gray-lgt;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		-ms-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		-o-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		box-shadow: 0 0 10px rgba(0,0,0,.5);
+		height: 80%;
+		left: 5%;
+		position: absolute;
+		top: 10%;
+		width: 90%;
 	}
 }
 
@@ -282,6 +310,9 @@ body {
 				}
 
 				.thumb {
+					display: block;
+					position: relative;
+
 					img {
 						max-width: 304px;
 						width: 100%;
@@ -328,6 +359,28 @@ body {
 //
 #code {
 	@extend #design;
+
+	ul {
+		&.work-list {
+			li {
+				.thumb {
+					img {
+						max-width: none;
+					}
+
+					.play-btn {
+						background: url(../imgs/icon_playbtn.svg) center no-repeat;
+						background-size: 80px 64px;
+						height: 100%;
+						left: 0;
+						position: absolute;
+						top: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }
 
 

@@ -17,7 +17,6 @@
 								 desktop:!index.mobile, mobile:index.mobile,
 								 no_touch:index.noTouch}">
 								
-
 	<div id="nav-bar" class="cf">
 		<header>
 			<a href="#/home"
@@ -41,7 +40,8 @@
 
 					<a href="#/{{item.label}}"
 						 ng-class="{carets:index.desktop}"
-						 ng-click="index.menuActive = !index.menuActive">
+						 ng-click="index.menuActive = !index.menuActive; 
+											 index.modal = false">
 						{{item.label | capitalize}}
 					</a>
 				</li>
@@ -49,7 +49,7 @@
 		</nav>
 	</div> <!-- nav-bar -->
 
-	<div id="view" ng-view></div>
+	<div id="view" ng-class="{noScroll:index.modal}" ng-view></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 	<script src="//code.angularjs.org/1.3.15/angular-route.min.js"></script>

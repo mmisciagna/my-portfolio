@@ -6,4 +6,9 @@ codeGallery.controller('CodeCtrl', function($rootScope, $scope, Code) {
 	var code = this;
 
   code.code = Code.items;
+
+  $scope.videoIndex = function(i) {
+  	console.log(i);
+		return i;
+  }
 });

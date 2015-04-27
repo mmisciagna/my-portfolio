@@ -24,7 +24,7 @@
         }
 
         &.menu-btn {
-          background: url(../imgs/menu_triangle.svg) no-repeat;
+          background: url(../imgs/icon_triangle.svg) no-repeat;
           background-size: 100% !important;
           height: 24px;
           left: 24px;
@@ -33,7 +33,7 @@
           width: 24px;
 
           &.menuActive {
-            background: url(../imgs/menu_x.svg) no-repeat;
+            background: url(../imgs/icon_x.svg) no-repeat;
           }
         }
       }
@@ -111,6 +111,10 @@
       overflow: hidden;
       overflow-y: auto;
       padding: 0 $inner-padding-mobile $inner-padding-mobile;
+
+      &.noScroll {
+        overflow: hidden !important;
+      }
     }
   }
 

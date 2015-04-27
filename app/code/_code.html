@@ -2,7 +2,7 @@
 	<h3>Code</h3>
 </header>
 
-<main id="code">
+<main id="code" ng-class="{noScroll:index.modal}">
   <ul class="work-list">
     <li class="cf" ng-repeat="item in code.code">
       <h2 class="title" ng-if="index.mobile">
@@ -21,12 +21,10 @@
         </span>
       </h2> <!-- .title for mobile-->
 
-      <div class="thumb">
-        <video width="100%" controls>
-          <source ng-repeat="src in item.srcType" ng-src="{{src.src}}" type="video/{{src.type}}" />
-          Your browse does not support HTML5 video.
-        </video>
-      </div> <!-- .thumb -->
+      <a class="thumb" ng-click="index.modal = !index.modal; videoIndex($index)">
+        <img ng-src="videos/{{item.poster}}" border="0" />
+        <span class="play-btn"></span>
+      </a> <!-- .thumb -->
 
       <div class="details">
         <h2 class="title" ng-if="!index.mobile">
@@ -63,7 +61,7 @@
 
           <p class="cf">
             <a class="button" href="{{item.link}}" target="_blank">
-              See it in action
+              Try it for yourself
             </a>
           </p>
         </div> <!-- .write-up -->
@@ -71,3 +69,20 @@
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
 </main>
+
+<div class="overlay" 
+     ng-show="index.modal" 
+     ng-click="index.modal = !index.modal;">
+</div> <!-- .overlay -->
+
+<div class="modal" ng-show="index.modal">
+  <video width="100%" controls ng-if="index.modal">
+    <source ng-repeat="video in code.code[videosIndex].srcType" 
+            ng-src="{{video.src}}" 
+            type="video/{{video.type}}" />
+    Your browse does not support HTML5 video.
+  </video>
+</div> <!-- .modal -->
+
+
+
