@@ -5,10 +5,17 @@ codeGallery.controller('CodeCtrl', function($rootScope, $scope, Code) {
 
 	var code = this;
 
-  code.code = Code.items;
+	code.videos = Code.items;
 
-  $scope.videoIndex = function(i) {
-  	console.log(i);
-		return i;
+  // Code.items().success(function(data) {
+  //   code.code = data;
+
+  // }).error(function() {
+  //   console.log('Error loading in code items.');
+  // });
+
+  code.videoIndex = function(i) {
+    console.log(i);
+  	code.index = i;
   }
 });

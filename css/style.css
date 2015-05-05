@@ -176,7 +176,7 @@ body {
     height: 100%;
     left: 0;
     opacity: .8;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%; }
   #view .modal {
@@ -187,7 +187,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 80%;
     left: 5%;
-    position: absolute;
+    position: fixed;
     top: 10%;
     width: 90%; }
 
@@ -265,6 +265,13 @@ body {
   position: absolute;
   top: 0;
   width: 100%; }
+#code video {
+  background: #000;
+  height: 80%;
+  left: 10%;
+  position: absolute;
+  top: 10%;
+  width: 80%; }
 
 /* ==========================================================================
    desktop screens

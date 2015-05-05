@@ -4,7 +4,7 @@
 
 <main id="code" ng-class="{noScroll:index.modal}">
   <ul class="work-list">
-    <li class="cf" ng-repeat="item in code.code">
+    <li class="cf" ng-repeat="item in code.videos">
       <h2 class="title" ng-if="index.mobile">
         <a href="{{item.link}}" target="_blank" ng-if="item.link">
           {{item.title}}
@@ -21,7 +21,7 @@
         </span>
       </h2> <!-- .title for mobile-->
 
-      <a class="thumb" ng-click="index.modal = !index.modal; videoIndex($index)">
+      <a class="thumb" ng-click="index.modal = !index.modal; code.videoIndex($index)">
         <img ng-src="videos/{{item.poster}}" border="0" />
         <span class="play-btn"></span>
       </a> <!-- .thumb -->
@@ -68,21 +68,21 @@
       </div> <!-- .details -->
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
-</main>
 
-<div class="overlay" 
+  <div class="overlay" 
      ng-show="index.modal" 
-     ng-click="index.modal = !index.modal;">
-</div> <!-- .overlay -->
+     ng-click="index.modal = !index.modal">
+  </div> <!-- .overlay -->
 
-<div class="modal" ng-show="index.modal">
-  <video width="100%" controls ng-if="index.modal">
-    <source ng-repeat="video in code.code[videosIndex].srcType" 
-            ng-src="{{video.src}}" 
-            type="video/{{video.type}}" />
-    Your browse does not support HTML5 video.
-  </video>
-</div> <!-- .modal -->
+  <div class="modal" ng-if="index.modal">
+    <video controls>
+      <source ng-repeat="video in code.videos[code.index].srcType"
+              ng-src="{{video.src}}" 
+              type="video/{{video.type}}">
+      Your browser does not support the video tag.
+    </video>
+  </div> <!-- .modal -->
+</main>
 
 
 
