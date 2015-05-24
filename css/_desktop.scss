@@ -8,7 +8,7 @@
       a {
         &.logo {
           background: url(../imgs/logo_dark.png) no-repeat;
-          height: 156px;
+          height: 161px;
           margin: 0 auto;
           width: 120px;
         }
@@ -19,8 +19,8 @@
       &:before {
         @include content;
           border: 12px solid transparent;
-          border-bottom-color: $blueGray-lgt;
-          border-right-color: $blueGray-lgt;
+          border-bottom-color: $primary-lgt;
+          border-right-color: $primary-lgt;
           height: 0;
           right: 0;
           top: -24px;
@@ -30,8 +30,8 @@
         &:after {
           @include content;
           border: 12px solid transparent;
-          border-right-color: $blueGray-lgt;
-          border-top-color: $blueGray-lgt;
+          border-right-color: $primary-lgt;
+          border-top-color: $primary-lgt;
           bottom: -24px;
           height: 0;
           right: 0;
@@ -51,8 +51,8 @@
           &:before {
             @include content;
             border: 12px solid transparent;
-            border-right-color: $blueGray-lgt;
-            border-top-color: $blueGray-lgt;
+            border-right-color: $primary-lgt;
+            border-top-color: $primary-lgt;
             height: 0;
             right: 0;
             top: 0;
@@ -62,8 +62,8 @@
           &:after {
             @include content;
             border: 12px solid transparent;
-            border-bottom-color: $blueGray-lgt;
-            border-right-color: $blueGray-lgt;
+            border-bottom-color: $primary-lgt;
+            border-right-color: $primary-lgt;
             bottom: 0;
             height: 0;
             right: 0;
@@ -137,7 +137,6 @@
         li {
           .thumb {
             float: left;
-            text-align: center;
             width: 40%;
           }
 
@@ -183,12 +182,12 @@
     @include transition;
 
     &:hover {
-      color: $blueGray-drk;
+      color: $primary-drk;
     }
 
     &.button:hover {
-      background: $teal-lgt;
-      color: $gray-lgt;
+      background: $accent-lgt;
+      color: $primary-med;
     }
   }
 
@@ -197,11 +196,11 @@
       li{
         a {
           &:hover {
-            color: $teal-lgt;
+            color: $accent-lgt;
           }
 
           &.active:hover {
-            color: $blueGray-drk;
+            color: $primary-drk;
           }
         }
       }
@@ -213,19 +212,13 @@
     .work-list {
       .title {
         a:hover {
-          color: $blueGray-drk;
+          color: $primary-drk;
 
           svg {
-            fill: $blueGray-drk;
+            fill: $primary-drk;
           }
         }
       }
-    }
-  }
-
-  #code {
-    .thumb:hover {
-      opacity: .8;
     }
   }
 }

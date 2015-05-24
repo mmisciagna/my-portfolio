@@ -112,7 +112,7 @@ img {
         #nav-bar nav ul li.active:after {
           display: none; }
         #nav-bar nav ul li.active a {
-          background: #1ce8b5;
+          background: #c5ff00;
           color: #253137 !important; }
 
 /* ==========================================================================
@@ -130,28 +130,30 @@ body {
   body.dark header {
     color: #445963; }
   body.dark a {
-    color: #1ce8b5; }
+    color: #c5ff00; }
     body.dark a.button {
-      background: #1ce8b5;
+      background: #c5ff00;
       color: #e0e0e0; }
   body.dark ::-moz-selection {
-    background: #1ce8b5; }
+    background: #c5ff00;
+    color: #253137; }
   body.dark ::selection {
-    background: #1ce8b5; }
+    background: #c5ff00;
+    color: #253137; }
   body.light {
     background: #e0e0e0;
     color: #445963; }
     body.light header {
       color: #c1c1c1; }
     body.light a {
-      color: #00bea4; }
+      color: #9d9c23; }
       body.light a.button {
-        background: #00bea4;
+        background: #9d9c23;
         color: #e0e0e0; }
     body.light ::-moz-selection {
-      background: #00bea4; }
+      background: #9d9c23; }
     body.light ::selection {
-      background: #00bea4; }
+      background: #9d9c23; }
 
 /* ==========================================================================
    view
@@ -207,7 +209,7 @@ body {
         #design ul.work-list li .title a svg, #code ul.work-list li .title a svg {
           height: 24px;
           width: 24px;
-          fill: #00bea4;
+          fill: #9d9c23;
           -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -309,7 +311,7 @@ modal {
   width: 152px; }
   .desktop #nav-bar header a.logo {
     background: url(../imgs/logo_dark.png) no-repeat;
-    height: 156px;
+    height: 161px;
     margin: 0 auto;
     width: 120px; }
   .desktop #nav-bar nav:before {
@@ -387,7 +389,6 @@ modal {
 .desktop #design ul.work-list li .thumb, .desktop #code ul.work-list li .thumb,
 .desktop #code ul.work-list li .thumb {
   float: left;
-  text-align: center;
   width: 40%; }
 .desktop #design ul.work-list li .details, .desktop #code ul.work-list li .details,
 .desktop #code ul.work-list li .details {
@@ -422,10 +423,10 @@ modal {
   .no_touch a:hover {
     color: #253137; }
   .no_touch a.button:hover {
-    background: #1ce8b5;
-    color: #e0e0e0; }
+    background: #c5ff00;
+    color: #445963; }
 .no_touch #nav-bar nav li a:hover {
-  color: #1ce8b5; }
+  color: #c5ff00; }
 .no_touch #nav-bar nav li a.active:hover {
   color: #253137; }
 .no_touch #design .work-list .title a:hover, .no_touch #code .work-list .title a:hover,
@@ -434,8 +435,6 @@ modal {
   .no_touch #design .work-list .title a:hover svg, .no_touch #code .work-list .title a:hover svg,
   .no_touch #code .work-list .title a:hover svg {
     fill: #253137; }
-.no_touch #code .thumb:hover {
-  opacity: .8; }
 
 /* ==========================================================================
    mobile devices
@@ -503,10 +502,11 @@ modal {
     .mobile #view header {
       padding: 24px; }
     .mobile #view main {
+      border-top: 1px solid #fff;
       height: calc(100% - 71px);
       overflow: hidden;
       overflow-y: auto;
-      padding: 0 24px 24px; }
+      padding: 24px; }
   .mobile #home.table {
     display: block; }
     .mobile #home.table h1 {
@@ -521,7 +521,7 @@ modal {
       padding-top: 0; }
     .mobile #design ul.work-list li .title, .mobile #code ul.work-list li .title,
     .mobile #code ul.work-list li .title {
-      margin-bottom: 12px;
+      margin-bottom: 24px;
       margin-left: 0; }
     .mobile #design ul.work-list li .details .write-up p, .mobile #code ul.work-list li .details .write-up p,
     .mobile #code ul.work-list li .details .write-up p {
@@ -540,9 +540,6 @@ modal {
 
 /* ==========================================================================
    media queries
-========================================================================== */
-/* ==========================================================================
-   media query - tablet
 ========================================================================== */
 @media only screen and (max-width: 960px) {
   .desktop #design ul.work-list li .thumb, .desktop #code ul.work-list li .thumb,

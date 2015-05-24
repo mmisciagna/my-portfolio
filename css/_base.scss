@@ -2,13 +2,13 @@
    global
    ========================================================================== */
 $font-stack: 'Source Sans Pro', sans-serif;
-$blueGray-drk: #253137;
-$blueGray-med: #445963;
-$blueGray-lgt: #69777a;
+$primary-drk: #253137;
+$primary-med: #445963;
+$primary-lgt: #69777a;
 $gray-med: #c1c1c1;
 $gray-lgt: #e0e0e0;
-$teal-drk: #00bea4;
-$teal-lgt: #1ce8b5;
+$accent-drk: #9d9c23;
+$accent-lgt: #c5ff00;
 $outer-padding: 20px;
 $inner-padding: 20px;
 $outer-padding-mobile: 24px;
@@ -134,7 +134,7 @@ img {
 ========================================================================== */
 body {
 	@extend html;
-	background: $blueGray-lgt;
+	background: $primary-lgt;
 	color: $gray-lgt;
 
 	::-moz-selection {
@@ -152,24 +152,26 @@ body {
 	//
 	&.dark {
 		header {
-	    color: $blueGray-med;
+	    color: $primary-med;
 		}
 
 	  a {
-	    color: $teal-lgt;
+	    color: $accent-lgt;
 
 	    &.button {
-	    	background: $teal-lgt;
+	    	background: $accent-lgt;
 	    	color: $gray-lgt;
 	    }
 	  }
 
 	  ::-moz-selection {
-			background: $teal-lgt;
+			background: $accent-lgt;
+			color: $primary-drk;
 		}
 
 		::selection {
-			background: $teal-lgt;
+			background: $accent-lgt;
+			color: $primary-drk;
 		}
 	}
 
@@ -178,27 +180,27 @@ body {
 	//
 	&.light {
 	  background: $gray-lgt;
-	  color: $blueGray-med;
+	  color: $primary-med;
 
 	  header {
 	    color: $gray-med;
 		}
 
 	  a {
-	    color: $teal-drk;
+	    color: $accent-drk;
 
 	    &.button {
-	    	background: $teal-drk;
+	    	background: $accent-drk;
 	    	color: $gray-lgt;
 	    }
 	  }
 
 	  ::-moz-selection {
-			background: $teal-drk;
+			background: $accent-drk;
 		}
 
 		::selection {
-			background: $teal-drk;
+			background: $accent-drk;
 		}
 	}
 }
@@ -276,7 +278,7 @@ body {
 						svg {
 							height: 24px;
 							width: 24px;
-							fill: $teal-drk;
+							fill: $accent-drk;
 							@include transition;
 						}
 					}

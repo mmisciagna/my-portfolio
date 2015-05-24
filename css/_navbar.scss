@@ -1,5 +1,5 @@
 #nav-bar {
-  background: $blueGray-drk;
+  background: $primary-drk;
 
   header {
     margin-bottom: 64px;
@@ -26,7 +26,7 @@
 
         &:before {
           @include content;
-          background: $blueGray-lgt;
+          background: $primary-lgt;
           height: 1px;
           left: 0;
           top: 0;
@@ -35,7 +35,7 @@
 
         &:last-child:after {
           @include content;
-          background: $blueGray-lgt;
+          background: $primary-lgt;
           bottom: 0;
           height: 1px;
           left: 0;
@@ -66,8 +66,8 @@
           }
 
           a {
-            background: $teal-lgt;
-            color: $blueGray-drk !important;
+            background: $accent-lgt;
+            color: $primary-drk !important;
           }
         }
       }
