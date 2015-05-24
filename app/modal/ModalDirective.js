@@ -1,6 +1,6 @@
 var modal = angular.module('modal', []);
 
-modal.directive('modal', function($timeout) {
+modal.directive('modal', function() {
 	return {
 		restrict: 'E',
 		scope: {
@@ -11,20 +11,16 @@ modal.directive('modal', function($timeout) {
 		compile: function() {
 			// linking function
 			var link = function(scope, elem, attrs) {
-				scope.close = function() {
-					scope.show = false;
-				}
-
-				// set video content
-				var	video_content = angular.element(
-					'<div class="video-wrapper">' +
-					  '<iframe src="' + scope.content.youtube + '?autoplay=1&controls=2&modestbranding=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>' +
+				elem.append(
+					'<div class="gallery">' + 
+						scope.content.title + 
+						scope.content.src + 
+						scope.content.alt + 
 					'</div>'
 				);
 
-				// do stuff if video modal
-				if( attrs.type === 'video' ) {
-					elem.append(video_content);
+				scope.close = function() {
+					scope.show = false;
 				}
 			}
 

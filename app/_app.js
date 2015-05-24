@@ -67,10 +67,10 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
 
 
   // show modal
-  // index.showModal = function(i) {
-  //   index.modal = true;
-  //   index.gallery_item = i;
-  // }
+  index.showModal = function(content) {
+    index.modal = true;
+    index.gallery_item = content;
+  }
 
   // safe HTML
   index.safeHTML = function(html) {

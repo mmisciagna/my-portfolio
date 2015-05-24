@@ -64,7 +64,8 @@
           <h3>Gallery</h3>
 
           <div class="radios">
-            <a class="button" ng-repeat="gal_item in item.gallery">
+            <a class="button" ng-repeat="gal_item in item.gallery"
+               ng-click="index.showModal(gal_item)">
               {{$index + 1}}
             </a>
           </div> <!-- .radios -->
@@ -73,3 +74,9 @@
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
 </main>
+
+
+<modal content="index.gallery_item" 
+       show="index.modal"
+       ng-if="index.modal">
+</modal>

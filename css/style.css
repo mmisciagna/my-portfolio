@@ -266,7 +266,8 @@ modal {
   position: fixed;
   text-align: center;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 100; }
   modal .overlay {
     background: #253137;
     height: 100%;
@@ -286,22 +287,6 @@ modal {
     position: absolute;
     top: 10%;
     width: 90%; }
-  modal .video-wrapper {
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    left: 10%;
-    padding-bottom: 45%;
-    position: absolute;
-    top: 5%;
-    width: 80%; }
-    modal .video-wrapper iframe {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%; }
 
 /* ==========================================================================
    desktop screens

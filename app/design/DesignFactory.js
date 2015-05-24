@@ -11,13 +11,13 @@ designGallery.factory('Designs', function() {
       goal: 'Design, develop and launch within in 2 weeks.',
       solution: 'A simple, easy-to-navigate site design that reflected the red/black of AngularJS rather than the  blue/green of Dart.',
       gallery: [
-       {title: 'title', src: 'src', alt: 'alt'},
-       {title: 'title', src: 'src', alt: 'alt'},
-       {title: 'title', src: 'src', alt: 'alt'},
-       {title: 'title', src: 'src', alt: 'alt'},
-       {title: 'title', src: 'src', alt: 'alt'},
-       {title: 'title', src: 'src', alt: 'alt'},
-       {title: 'title', src: 'src', alt: 'alt'},
+       {title: 'title 1', src: 'src', alt: 'alt'},
+       {title: 'title 2', src: 'src', alt: 'alt'},
+       {title: 'title 3', src: 'src', alt: 'alt'},
+       {title: 'title 4', src: 'src', alt: 'alt'},
+       {title: 'title 5', src: 'src', alt: 'alt'},
+       {title: 'title 6', src: 'src', alt: 'alt'},
+       {title: 'title 7', src: 'src', alt: 'alt'},
       ]
     },
 

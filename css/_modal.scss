@@ -5,6 +5,7 @@ modal {
 	text-align: center;
 	top: 0;
 	width: 100%;
+	z-index: 100;
 
 	.overlay {
 		background: $blueGray-drk;
@@ -27,25 +28,5 @@ modal {
 		position: absolute;
 		top: 10%;
 		width: 90%;
-	}
-
-	.video-wrapper {
-		-moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
-		-ms-box-shadow: 0 0 10px rgba(0,0,0,.5);
-		-o-box-shadow: 0 0 10px rgba(0,0,0,.5);
-		box-shadow: 0 0 10px rgba(0,0,0,.5);
-		left: 10%;
-		padding-bottom: 45%;
-		position: absolute;
-		top: 5%;
-		width: 80%;
-
-		iframe {
-			height: 100%;
-			left: 0;
-			position: absolute;
-			top: 0;
-			width: 100%;
-		}
 	}
 }
