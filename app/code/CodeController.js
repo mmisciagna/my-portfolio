@@ -6,16 +6,4 @@ codeGallery.controller('CodeCtrl', function($rootScope, $scope, Code) {
 	var code = this;
 
 	code.videos = Code.items;
-
-  // Code.items().success(function(data) {
-  //   code.code = data;
-
-  // }).error(function() {
-  //   console.log('Error loading in code items.');
-  // });
-
-  code.videoIndex = function(i) {
-    console.log(i);
-  	code.index = i;
-  }
 });

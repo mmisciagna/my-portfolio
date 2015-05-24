@@ -1,0 +1,10 @@
+<div class="overlay"></div>
+
+<div class="modal">
+  <video controls>
+    <source ng-repeat="video in code.videos[code.index].srcType"
+            ng-src="{{video.src}}" 
+            type="video/{{video.type}}">
+    Your browser does not support the video tag.
+  </video>
+</div>

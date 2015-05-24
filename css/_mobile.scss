@@ -111,10 +111,6 @@
       overflow: hidden;
       overflow-y: auto;
       padding: 0 $inner-padding-mobile $inner-padding-mobile;
-
-      &.noScroll {
-        overflow: hidden !important;
-      }
     }
   }
 

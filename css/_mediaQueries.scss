@@ -1,7 +1,7 @@
-@media only screen and (min-width: 1500px) {
-	// 
-	// DESIGN & CODE
-	// 
+/* ==========================================================================
+   media query - tablet
+========================================================================== */
+@media only screen and (max-width: 960px) {
 	.desktop,
 	.mobile {
 		#design,
@@ -10,9 +10,14 @@
 	      &.work-list {
 	        li {
 	          .thumb {
-	            img {
-	            	max-width: 500px;
-	            }
+	          	float: none;
+	          	padding-bottom: 62.5%;
+	          	width: 100%;
+
+	          	img {
+	          		left: 0;
+	          		right: auto;
+	          	}
 	          }
 	        }
 	      }
@@ -20,6 +25,7 @@
 	  }
 	}
 }
+
 
 @media only screen and (min-width: 640px) and (max-width: 960px) {
 	// 
@@ -32,15 +38,11 @@
 	    ul {
 	      &.work-list {
 	        li {
-	          .thumb,
 	          .details {
 	            float: none;
+	            margin: 32px 0 0;
 	            padding: 0;
 	            width: 100%;
-	          }
-
-	          .details {
-	            margin: 32px 0 0;
 	          }
 	        }
 	      }

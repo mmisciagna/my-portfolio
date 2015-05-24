@@ -1,11 +1,13 @@
 var app = angular.module('app', [
     'ng.deviceDetector',
-		'ngRoute',
+    'ngRoute',
+		'ngSanitize',
 		'home', 
 		'designGallery', 
 		'codeGallery', 
 		'about', 
-		'contact'
+    'contact',
+		'modal'
 	]);
 
 
@@ -37,7 +39,8 @@ app.config(function($routeProvider) {
 
 
 app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
-                                     $timeout) {
+  $timeout, $sce) {
+
   var index = this;
 
   // NAV & BG COLOR
@@ -54,7 +57,6 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
     return path === $location.path();
   }
 
-
   // DEVICE DETECTION
   if( deviceDetector.device == 'unknown') {
     $scope.index.noTouch = true;
@@ -62,6 +64,18 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
   } else {
     $scope.index.noTouch = false;
   }
+
+
+  // show modal
+  // index.showModal = function(i) {
+  //   index.modal = true;
+  //   index.gallery_item = i;
+  // }
+
+  // safe HTML
+  index.safeHTML = function(html) {
+    return $sce.trustAsHtml(html);
+  };
 
 
   // MEDIAQUERIES

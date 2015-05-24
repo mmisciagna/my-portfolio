@@ -2,7 +2,7 @@
 	<h3>Code</h3>
 </header>
 
-<main id="code" ng-class="{noScroll:index.modal}">
+<main id="code">
   <ul class="work-list">
     <li class="cf" ng-repeat="item in code.videos">
       <h2 class="title" ng-if="index.mobile">
@@ -21,10 +21,7 @@
         </span>
       </h2> <!-- .title for mobile-->
 
-      <a class="thumb" ng-click="index.modal = !index.modal; code.videoIndex($index)">
-        <img ng-src="videos/{{item.poster}}" border="0" />
-        <span class="play-btn"></span>
-      </a> <!-- .thumb -->
+      <div class="thumb" ng-bind-html="index.safeHTML(item.youtube)"></div>
 
       <div class="details">
         <h2 class="title" ng-if="!index.mobile">
@@ -69,19 +66,11 @@
     </li> <!-- .list-item -->
   </ul> <!-- .work-list -->
 
-  <div class="overlay" 
-     ng-show="index.modal" 
-     ng-click="index.modal = !index.modal">
-  </div> <!-- .overlay -->
-
-  <div class="modal" ng-if="index.modal">
-    <video controls>
-      <source ng-repeat="video in code.videos[code.index].srcType"
-              ng-src="{{video.src}}" 
-              type="video/{{video.type}}">
-      Your browser does not support the video tag.
-    </video>
-  </div> <!-- .modal -->
+ <!--  <modal type="video"
+         show="index.modal"
+         content="code.videos[index.gallery_item]" 
+         ng-if="index.modal">
+  </modal> -->
 </main>
 
 

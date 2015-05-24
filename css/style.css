@@ -161,8 +161,6 @@ body {
   overflow-y: auto;
   padding: 20px;
   position: relative; }
-  #view.noScroll {
-    overflow: hidden !important; }
   #view header {
     padding: 20px; }
     #view header h3 {
@@ -171,25 +169,6 @@ body {
       width: 152px; }
   #view main {
     padding: 20px; }
-  #view .overlay {
-    background: #253137;
-    height: 100%;
-    left: 0;
-    opacity: .8;
-    position: fixed;
-    top: 0;
-    width: 100%; }
-  #view .modal {
-    background: #e0e0e0;
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: 80%;
-    left: 5%;
-    position: fixed;
-    top: 10%;
-    width: 90%; }
 
 /* ==========================================================================
    HOME
@@ -234,11 +213,23 @@ body {
           -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
     #design ul.work-list li .thumb, #code ul.work-list li .thumb {
-      display: block;
-      position: relative; }
-      #design ul.work-list li .thumb img, #code ul.work-list li .thumb img {
-        max-width: 304px;
+      float: left;
+      height: 0;
+      padding-bottom: 25%;
+      position: relative;
+      text-align: center;
+      width: 40%; }
+      #design ul.work-list li .thumb iframe, #code ul.work-list li .thumb iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
         width: 100%; }
+      #design ul.work-list li .thumb img, #code ul.work-list li .thumb img {
+        height: 100%;
+        right: 0;
+        position: absolute;
+        top: 0; }
     #design ul.work-list li .details .write-up, #code ul.work-list li .details .write-up {
       margin-bottom: 24px; }
       #design ul.work-list li .details .write-up p, #code ul.work-list li .details .write-up p {
@@ -265,13 +256,52 @@ body {
   position: absolute;
   top: 0;
   width: 100%; }
-#code video {
-  background: #000;
-  height: 80%;
-  left: 10%;
-  position: absolute;
-  top: 10%;
-  width: 80%; }
+
+/* ==========================================================================
+   modal
+========================================================================== */
+modal {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%; }
+  modal .overlay {
+    background: #253137;
+    height: 100%;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+  modal .gallery {
+    background: #e0e0e0;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 80%;
+    left: 5%;
+    position: absolute;
+    top: 10%;
+    width: 90%; }
+  modal .video-wrapper {
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    left: 10%;
+    padding-bottom: 45%;
+    position: absolute;
+    top: 5%;
+    width: 80%; }
+    modal .video-wrapper iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%; }
 
 /* ==========================================================================
    desktop screens
@@ -480,8 +510,6 @@ body {
       overflow: hidden;
       overflow-y: auto;
       padding: 0 24px 24px; }
-      .mobile #view main.noScroll {
-        overflow: hidden !important; }
   .mobile #home.table {
     display: block; }
     .mobile #home.table h1 {
@@ -516,33 +544,34 @@ body {
 /* ==========================================================================
    media queries
 ========================================================================== */
-@media only screen and (min-width: 1500px) {
-  .desktop #design ul.work-list li .thumb img, .desktop #code ul.work-list li .thumb img,
-  .desktop #code ul.work-list li .thumb img,
-  .mobile #design ul.work-list li .thumb img,
-  .mobile #code ul.work-list li .thumb img,
-  .mobile #code ul.work-list li .thumb img {
-    max-width: 500px; } }
-@media only screen and (min-width: 640px) and (max-width: 960px) {
+/* ==========================================================================
+   media query - tablet
+========================================================================== */
+@media only screen and (max-width: 960px) {
   .desktop #design ul.work-list li .thumb, .desktop #code ul.work-list li .thumb,
-  .desktop #design ul.work-list li .details,
-  .desktop #code ul.work-list li .details,
   .desktop #code ul.work-list li .thumb,
-  .desktop #code ul.work-list li .details,
   .mobile #design ul.work-list li .thumb,
   .mobile #code ul.work-list li .thumb,
-  .mobile #design ul.work-list li .details,
-  .mobile #code ul.work-list li .details,
-  .mobile #code ul.work-list li .thumb,
-  .mobile #code ul.work-list li .details {
+  .mobile #code ul.work-list li .thumb {
     float: none;
-    padding: 0;
+    padding-bottom: 62.5%;
     width: 100%; }
+    .desktop #design ul.work-list li .thumb img, .desktop #code ul.work-list li .thumb img,
+    .desktop #code ul.work-list li .thumb img,
+    .mobile #design ul.work-list li .thumb img,
+    .mobile #code ul.work-list li .thumb img,
+    .mobile #code ul.work-list li .thumb img {
+      left: 0;
+      right: auto; } }
+@media only screen and (min-width: 640px) and (max-width: 960px) {
   .desktop #design ul.work-list li .details, .desktop #code ul.work-list li .details,
   .desktop #code ul.work-list li .details,
   .mobile #design ul.work-list li .details,
   .mobile #code ul.work-list li .details,
   .mobile #code ul.work-list li .details {
-    margin: 32px 0 0; } }
+    float: none;
+    margin: 32px 0 0;
+    padding: 0;
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,51 @@
+modal {	
+	height: 100%;
+	left: 0;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+
+	.overlay {
+		background: $blueGray-drk;
+		height: 100%;
+		left: 0;
+		opacity: .8;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.gallery {
+		background: $gray-lgt;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		-ms-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		-o-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		box-shadow: 0 0 10px rgba(0,0,0,.5);
+		height: 80%;
+		left: 5%;
+		position: absolute;
+		top: 10%;
+		width: 90%;
+	}
+
+	.video-wrapper {
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		-ms-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		-o-box-shadow: 0 0 10px rgba(0,0,0,.5);
+		box-shadow: 0 0 10px rgba(0,0,0,.5);
+		left: 10%;
+		padding-bottom: 45%;
+		position: absolute;
+		top: 5%;
+		width: 80%;
+
+		iframe {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+}
