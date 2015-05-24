@@ -4,8 +4,25 @@ modal {
 	position: fixed;
 	text-align: center;
 	top: 0;
+	@include transition;
 	width: 100%;
 	z-index: 100;
+
+	&.ng-enter {
+		opacity: 0;
+	}
+
+	&.ng-enter.ng-enter-active {
+		opacity: 1;
+	}
+
+	&.ng-leave {
+		opacity: 1;
+	}
+
+	&.ng-leave.ng-leave-active {
+		opacity: 0;
+	}
 
 	.overlay {
 		background: $blueGray-drk;

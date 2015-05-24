@@ -266,8 +266,20 @@ modal {
   position: fixed;
   text-align: center;
   top: 0;
+  -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   z-index: 100; }
+  modal.ng-enter {
+    opacity: 0; }
+  modal.ng-enter.ng-enter-active {
+    opacity: 1; }
+  modal.ng-leave {
+    opacity: 1; }
+  modal.ng-leave.ng-leave-active {
+    opacity: 0; }
   modal .overlay {
     background: #253137;
     height: 100%;

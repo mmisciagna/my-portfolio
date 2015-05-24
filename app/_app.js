@@ -1,7 +1,8 @@
 var app = angular.module('app', [
     'ng.deviceDetector',
     'ngRoute',
-		'ngSanitize',
+    'ngSanitize',
+		'ngAnimate',
 		'home', 
 		'designGallery', 
 		'codeGallery', 
