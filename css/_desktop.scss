@@ -10,6 +10,8 @@
           background: url(../imgs/logo_dark.png) no-repeat;
           height: 161px;
           margin: 0 auto;
+          opacity: .25;
+          @include transition;
           width: 120px;
         }
       }
@@ -192,6 +194,10 @@
   }
 
   #nav-bar {
+    .logo:hover {
+      opacity: 1;
+    }
+
     nav {
       li{
         a {

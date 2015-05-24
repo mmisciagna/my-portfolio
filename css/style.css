@@ -313,6 +313,11 @@ modal {
     background: url(../imgs/logo_dark.png) no-repeat;
     height: 161px;
     margin: 0 auto;
+    opacity: .25;
+    -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     width: 120px; }
   .desktop #nav-bar nav:before {
     content: "";
@@ -425,6 +430,8 @@ modal {
   .no_touch a.button:hover {
     background: #c5ff00;
     color: #445963; }
+.no_touch #nav-bar .logo:hover {
+  opacity: 1; }
 .no_touch #nav-bar nav li a:hover {
   color: #c5ff00; }
 .no_touch #nav-bar nav li a.active:hover {
@@ -451,11 +458,24 @@ modal {
         position: absolute;
         right: 24px;
         top: 0;
+        -ms-transform: translate(-5000%, 0);
+        -moz-transform: translate(-5000%, 0);
+        -webkit-transform: translate(-5000%, 0);
+        transform: translate(-5000%, 0);
         width: 80px;
         z-index: 100; }
+        .mobile #nav-bar header a.logo[menu-ready="true"] {
+          -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
         .mobile #nav-bar header a.logo.menuActive {
           background: url(../imgs/logo_dark.png) no-repeat !important;
-          background-size: 100% !important; }
+          background-size: 100% !important;
+          -ms-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -webkit-transform: translate(0, 0);
+          transform: translate(0, 0); }
       .mobile #nav-bar header a.menu-btn {
         background: url(../imgs/icon_triangle.svg) no-repeat;
         background-size: 100% !important;

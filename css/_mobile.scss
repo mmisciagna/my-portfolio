@@ -14,12 +14,18 @@
           position: absolute;
           right: 24px;
           top: 0;
+          @include translate(-5000%,0);
           width: 80px;
           z-index: 100;
+
+          &[menu-ready="true"] {
+            @include transition;
+          }
 
           &.menuActive {
             background: url(../imgs/logo_dark.png) no-repeat !important;
             background-size: 100% !important;
+            @include translate(0,0);
           }
         }
 
