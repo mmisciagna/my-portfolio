@@ -6,7 +6,18 @@
     overflow: visible;
 
     header {
-      padding: 0 24px;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+      padding: 16px 24px 0;
+
+      span {
+        color: $accent-lgt;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1;
+      }
 
       a {
         &.logo {
@@ -14,12 +25,12 @@
           position: absolute;
           right: 24px;
           top: 0;
-          @include translate(-5000%,0);
+          @include translate(4000%,0);
           width: 80px;
           z-index: 100;
 
           &[menu-ready="true"] {
-            @include transition;
+            @include transition(transform, .5s, $cubic-transition);
           }
 
           &.menuActive {
@@ -33,9 +44,6 @@
           background: url(../imgs/icon_triangle.svg) no-repeat;
           background-size: 100% !important;
           height: 24px;
-          left: 24px;
-          position: absolute;
-          top: 16px;
           width: 24px;
 
           &.menuActive {
@@ -113,8 +121,7 @@
     }
 
     main {
-      border-top: 1px solid #fff;
-      height: calc(100% - 71px);
+      height: 100%;
       overflow: hidden;
       overflow-y: auto;
       padding: $inner-padding-mobile;
@@ -130,6 +137,8 @@
 
       h1 {
         display: block;
+        line-height: 1.35em;
+        text-align: right;
       }
     }
   }

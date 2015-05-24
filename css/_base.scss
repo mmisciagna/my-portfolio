@@ -7,14 +7,15 @@ $primary-med: #445963;
 $primary-lgt: #69777a;
 $gray-med: #c1c1c1;
 $gray-lgt: #e0e0e0;
-$accent-drk: #9d9c23;
-$accent-lgt: #c5ff00;
+$accent-drk: #00b7d3;
+$accent-lgt: #00e4ff;
 $outer-padding: 20px;
 $inner-padding: 20px;
 $outer-padding-mobile: 24px;
 $inner-padding-mobile: 24px;
+$cubic-transition: cubic-bezier(0.4, 0.0, 0.2, 1);
 
-@mixin transition($prop: all, $time: .2s, $easing: cubic-bezier(0.4, 0.0, 0.2, 1)) {
+@mixin transition($prop: all, $time: .2s, $easing: $cubic-transition) {
 	-ms-transition: $prop $time $easing;
 	-moz-transition: $prop $time $easing;
 	-webkit-transition: $prop $time $easing;
@@ -103,6 +104,10 @@ a {
 	}
 
 	&.button {
+		-moz-box-shadow: 1px 2px 5px rgba(0,0,0,.15);
+		-ms-box-shadow: 1px 2px 5px rgba(0,0,0,.15);
+		-webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.15);
+		box-shadow: 1px 2px 5px rgba(0,0,0,.15);
 		display: inline-block;
 		font-size: 1em;
 		padding: 8px 32px;
@@ -221,6 +226,7 @@ body {
 		h3 {
 			border-bottom: 1px solid;
 			display: inline-block;
+			line-height: 1.25em;
 			width: 152px;
 		}
 	}
@@ -236,9 +242,9 @@ body {
 ========================================================================== */
 #home {
 	&.table {
-		height: 50%;
+		height: 70%;
 		margin: 0 auto;
-		max-width: 1250px;
+		max-width: 1160px;
 	}
 }
 

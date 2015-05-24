@@ -1,5 +1,6 @@
 var contact = angular.module('contact', []);
 
-contact.controller('ContactCtrl', function($rootScope) {
-	$rootScope.bgColor = 'dark';
+contact.controller('ContactCtrl', function($scope) {
+	$scope.index.bgColor = 'dark';
+	$scope.index.page_title = 'Contact';
 });

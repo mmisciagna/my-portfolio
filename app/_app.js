@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
   	templateUrl: 'app/design/_design.html',
     controller: 'DesignCtrl as design'
 
-  }).when('/code', {
+  }).when('/coding', {
   	templateUrl: 'app/code/_code.html',
     controller: 'CodeCtrl as code'
 
@@ -48,7 +48,7 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
   index.nav = [
     {label: 'home'},
     {label: 'design'},
-    {label: 'code'},
+    {label: 'coding'},
     {label: 'about'},
     {label: 'contact'}
   ];
@@ -65,7 +65,6 @@ app.controller('IndexCtrl', function(deviceDetector, $location, $scope, $window,
   } else {
     $scope.index.noTouch = false;
   }
-
 
   // show modal
   index.showModal = function(content) {

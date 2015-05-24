@@ -46,6 +46,10 @@ a {
   a:focus {
     outline: none; }
   a.button {
+    -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
     display: inline-block;
     font-size: 1em;
     padding: 8px 32px;
@@ -112,7 +116,7 @@ img {
         #nav-bar nav ul li.active:after {
           display: none; }
         #nav-bar nav ul li.active a {
-          background: #c5ff00;
+          background: #00e4ff;
           color: #253137 !important; }
 
 /* ==========================================================================
@@ -130,15 +134,15 @@ body {
   body.dark header {
     color: #445963; }
   body.dark a {
-    color: #c5ff00; }
+    color: #00e4ff; }
     body.dark a.button {
-      background: #c5ff00;
+      background: #00e4ff;
       color: #e0e0e0; }
   body.dark ::-moz-selection {
-    background: #c5ff00;
+    background: #00e4ff;
     color: #253137; }
   body.dark ::selection {
-    background: #c5ff00;
+    background: #00e4ff;
     color: #253137; }
   body.light {
     background: #e0e0e0;
@@ -146,14 +150,14 @@ body {
     body.light header {
       color: #c1c1c1; }
     body.light a {
-      color: #9d9c23; }
+      color: #00b7d3; }
       body.light a.button {
-        background: #9d9c23;
+        background: #00b7d3;
         color: #e0e0e0; }
     body.light ::-moz-selection {
-      background: #9d9c23; }
+      background: #00b7d3; }
     body.light ::selection {
-      background: #9d9c23; }
+      background: #00b7d3; }
 
 /* ==========================================================================
    view
@@ -168,6 +172,7 @@ body {
     #view header h3 {
       border-bottom: 1px solid;
       display: inline-block;
+      line-height: 1.25em;
       width: 152px; }
   #view main {
     padding: 20px; }
@@ -176,9 +181,9 @@ body {
    HOME
 ========================================================================== */
 #home.table {
-  height: 50%;
+  height: 70%;
   margin: 0 auto;
-  max-width: 1250px; }
+  max-width: 1160px; }
 
 /* ==========================================================================
    DESIGN & CODE
@@ -209,7 +214,7 @@ body {
         #design ul.work-list li .title a svg, #code ul.work-list li .title a svg {
           height: 24px;
           width: 24px;
-          fill: #9d9c23;
+          fill: #00b7d3;
           -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -265,6 +270,8 @@ body {
 modal {
   height: 100%;
   left: 0;
+  overflow: hidden;
+  overflow-y: auto;
   position: fixed;
   text-align: center;
   top: 0;
@@ -296,7 +303,6 @@ modal {
     -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: 80%;
     left: 5%;
     position: absolute;
     top: 10%;
@@ -313,7 +319,7 @@ modal {
     background: url(../imgs/logo_dark.png) no-repeat;
     height: 161px;
     margin: 0 auto;
-    opacity: .25;
+    opacity: .9;
     -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -428,12 +434,12 @@ modal {
   .no_touch a:hover {
     color: #253137; }
   .no_touch a.button:hover {
-    background: #c5ff00;
+    background: #00e4ff;
     color: #445963; }
 .no_touch #nav-bar .logo:hover {
   opacity: 1; }
 .no_touch #nav-bar nav li a:hover {
-  color: #c5ff00; }
+  color: #00e4ff; }
 .no_touch #nav-bar nav li a.active:hover {
   color: #253137; }
 .no_touch #design .work-list .title a:hover, .no_touch #code .work-list .title a:hover,
@@ -452,23 +458,32 @@ modal {
     height: 56px;
     overflow: visible; }
     .mobile #nav-bar header {
-      padding: 0 24px; }
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+      padding: 16px 24px 0; }
+      .mobile #nav-bar header span {
+        color: #00e4ff;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1; }
       .mobile #nav-bar header a.logo {
         height: 107px;
         position: absolute;
         right: 24px;
         top: 0;
-        -ms-transform: translate(-5000%, 0);
-        -moz-transform: translate(-5000%, 0);
-        -webkit-transform: translate(-5000%, 0);
-        transform: translate(-5000%, 0);
+        -ms-transform: translate(4000%, 0);
+        -moz-transform: translate(4000%, 0);
+        -webkit-transform: translate(4000%, 0);
+        transform: translate(4000%, 0);
         width: 80px;
         z-index: 100; }
         .mobile #nav-bar header a.logo[menu-ready="true"] {
-          -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-          -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+          -ms-transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          -webkit-transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .mobile #nav-bar header a.logo.menuActive {
           background: url(../imgs/logo_dark.png) no-repeat !important;
           background-size: 100% !important;
@@ -480,9 +495,6 @@ modal {
         background: url(../imgs/icon_triangle.svg) no-repeat;
         background-size: 100% !important;
         height: 24px;
-        left: 24px;
-        position: absolute;
-        top: 16px;
         width: 24px; }
         .mobile #nav-bar header a.menu-btn.menuActive {
           background: url(../imgs/icon_x.svg) no-repeat; }
@@ -522,15 +534,16 @@ modal {
     .mobile #view header {
       padding: 24px; }
     .mobile #view main {
-      border-top: 1px solid #fff;
-      height: calc(100% - 71px);
+      height: 100%;
       overflow: hidden;
       overflow-y: auto;
       padding: 24px; }
   .mobile #home.table {
     display: block; }
     .mobile #home.table h1 {
-      display: block; }
+      display: block;
+      line-height: 1.35em;
+      text-align: right; }
   .mobile #design ul.work-list li, .mobile #code ul.work-list li,
   .mobile #code ul.work-list li {
     margin-top: 24px;

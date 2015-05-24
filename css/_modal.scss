@@ -1,6 +1,8 @@
 modal {	
 	height: 100%;
 	left: 0;
+	overflow: hidden;
+	overflow-y: auto;
 	position: fixed;
 	text-align: center;
 	top: 0;
@@ -40,7 +42,7 @@ modal {
 		-ms-box-shadow: 0 0 10px rgba(0,0,0,.5);
 		-o-box-shadow: 0 0 10px rgba(0,0,0,.5);
 		box-shadow: 0 0 10px rgba(0,0,0,.5);
-		height: 80%;
+		// height: 80%;
 		left: 5%;
 		position: absolute;
 		top: 10%;

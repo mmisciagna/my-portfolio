@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-class="{dark:bgColor=='dark', light:bgColor=='light',
+<body ng-class="{dark:index.bgColor=='dark', light:index.bgColor=='light',
 								 desktop:!index.mobile, mobile:index.mobile,
 								 no_touch:index.noTouch}">
 								
@@ -37,6 +37,10 @@
 				 ng-class="{menuActive:index.menuActive}"
 				 ng-click="index.menuActive = !index.menuActive">
 			</a> <!-- .menu-btn -->
+
+			<span class="page-title" ng-if="index.mobile && !index.menuActive">
+				{{index.page_title}}
+			</span>
 		</header>
 
 		<nav ng-class="{menuActive:index.menuActive}"
