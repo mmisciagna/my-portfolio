@@ -1,10 +1,33 @@
-<div class="overlay"></div>
+<div class="overlay" ng-click="close()"></div>
 
-<div class="modal">
-  <video controls>
-    <source ng-repeat="video in code.videos[code.index].srcType"
-            ng-src="{{video.src}}" 
-            type="video/{{video.type}}">
-    Your browser does not support the video tag.
-  </video>
+<div class="gallery"> 
+	<div class="actions">
+		<a class="paginate prev" ng-click="prev()">
+			<svg>
+				<g>
+					<path d="M20.8,2L12,19.5L3.2,2L20.8,2 M24,0L0,0l12,24L24,0L24,0z"/>
+				</g>
+			</svg>
+		</a> 
+
+		<a class="close" ng-click="close()">
+			<svg>
+				<g>
+					<rect x="-4" y="11" transform="matrix(0.7071 0.7071 -0.7071 0.7071 12.0029 -4.9718)" width="31.9" height="2"/>
+					<rect x="-4" y="11" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.9697 12.0021)" width="31.9" height="2"/>
+				</g>
+			</svg>
+		</a>
+
+		<a class="paginate next" ng-click="next()">
+			<svg>
+				<g>
+					<path d="M20.8,2L12,19.5L3.2,2L20.8,2 M24,0L0,0l12,24L24,0L24,0z"/>
+				</g>
+			</svg>
+		</a>
+	</div>
+
+	<h3 class="title"></h3>
+	<div class="image"></div>
 </div>

@@ -271,7 +271,6 @@ modal {
   height: 100%;
   left: 0;
   overflow: hidden;
-  overflow-y: auto;
   position: fixed;
   text-align: center;
   top: 0;
@@ -303,10 +302,52 @@ modal {
     -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    left: 5%;
+    left: 10%;
+    max-height: 95%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding-bottom: 48px;
     position: absolute;
-    top: 10%;
-    width: 90%; }
+    top: 2.5%;
+    width: 80%; }
+    modal .gallery .actions {
+      background: #00b7d3;
+      border: 2px solid #e0e0e0;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      padding: 8px; }
+      modal .gallery .actions a {
+        height: 24px;
+        margin: 0 24px;
+        width: 24px; }
+        modal .gallery .actions a svg {
+          fill: #253137;
+          height: 24px;
+          width: 24px; }
+        modal .gallery .actions a.prev {
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg); }
+        modal .gallery .actions a.next {
+          -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+    modal .gallery h3 {
+      padding: 24px;
+      position: relative;
+      text-align: center; }
+      modal .gallery h3 span {
+        color: #c1c1c1;
+        display: block; }
+    modal .gallery .image {
+      padding: 0 24px; }
+      modal .gallery .image img {
+        max-height: 512px;
+        max-width: 100%; }
 
 /* ==========================================================================
    desktop screens
@@ -570,6 +611,8 @@ modal {
       font-size: 2em;
       line-height: 48px;
       width: 48px; }
+  .mobile modal .gallery {
+    top: 15%; }
 
 /* ==========================================================================
    media queries

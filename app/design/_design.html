@@ -1,7 +1,3 @@
-<!-- <header ng-if="!index.mobile">
-	<h3>{{index.page_title}}</h3>
-</header> -->
-
 <main id="design">
   <ul class="work-list">
     <li class="cf" ng-repeat="item in design.designs">
@@ -65,7 +61,7 @@
 
           <div class="radios">
             <a class="button" ng-repeat="gal_item in item.gallery"
-               ng-click="index.showModal(gal_item)">
+               ng-click="index.showModal(item, $index)">
               {{$index + 1}}
             </a>
           </div> <!-- .radios -->
@@ -76,7 +72,8 @@
 </main>
 
 
-<modal content="index.gallery_item" 
+<modal content="index.gallery_content" 
+       index="index.gallery_item"
        show="index.modal"
        ng-if="index.modal">
 </modal>

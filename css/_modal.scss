@@ -2,7 +2,6 @@ modal {
 	height: 100%;
 	left: 0;
 	overflow: hidden;
-	overflow-y: auto;
 	position: fixed;
 	text-align: center;
 	top: 0;
@@ -42,10 +41,69 @@ modal {
 		-ms-box-shadow: 0 0 10px rgba(0,0,0,.5);
 		-o-box-shadow: 0 0 10px rgba(0,0,0,.5);
 		box-shadow: 0 0 10px rgba(0,0,0,.5);
-		// height: 80%;
-		left: 5%;
+		left: 10%;
+		max-height: 95%;
+		overflow: hidden;
+		overflow-y: auto;
+		padding-bottom: 48px;
 		position: absolute;
-		top: 10%;
-		width: 90%;
+		top: 2.5%;
+		width: 80%;
+
+		.actions {	
+			background: $accent-drk;
+			border: 2px solid $gray-lgt;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: space-between;
+			justify-content: space-between;
+			padding: 8px;
+
+			a {
+				height: 24px;
+				margin: 0 24px;
+				width: 24px;
+
+				svg {
+					fill: $primary-drk;
+					height: 24px;
+					width: 24px;
+				}
+
+				&.prev {
+					-moz-transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					-webkit-transform: rotate(90deg);
+					transform: rotate(90deg);
+				}
+
+				&.next {
+					-moz-transform: rotate(-90deg);
+					-ms-transform: rotate(-90deg);
+					-webkit-transform: rotate(-90deg);
+					transform: rotate(-90deg);
+				}
+			}
+		}
+
+		h3 {
+			padding: 24px;
+			position: relative;
+			text-align: center;
+
+			span {
+				color: $gray-med;
+				display: block;
+			}
+		}
+
+		.image {
+			padding: 0 24px;
+
+			img {
+				max-height: 512px;
+				max-width: 100%;
+			}
+		}
 	}
 }

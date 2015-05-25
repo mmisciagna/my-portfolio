@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 396.5 776.3" enable-background="new 0 0 396.5 776.3" xml:space="preserve">
+<g id="Mobile">
+	<path fill="#CCCCCC" d="M100,106.4c0,4.4-3.6,8-8,8l-84,0c-4.4,0-8-3.6-8-8l0-31c0-4.4,3.6-8,8-8l84,0c4.4,0,8,3.6,8,8L100,106.4z"
+		/>
+	<path fill="#CCCCCC" d="M100,199.1c0,4.4-3.6,8-8,8l-84,0c-4.4,0-8-3.6-8-8l0-22c0-4.4,3.6-8,8-8l84,0c4.4,0,8,3.6,8,8L100,199.1z"
+		/>
+	<path fill="#CCCCCC" d="M100,281.1c0,4.4-3.6,8-8,8l-84,0c-4.4,0-8-3.6-8-8l0-22c0-4.4,3.6-8,8-8l84,0c4.4,0,8,3.6,8,8L100,281.1z"
+		/>
+	<path fill="#EEEEEE" d="M396.5,715.6c0,33.5-27.2,60.6-60.6,60.6l-271.7,0c-33.5,0-60.6-27.2-60.6-60.6l0-655
+		C3.5,27.2,30.7,0,64.1,0l271.7,0c33.5,0,60.6,27.2,60.6,60.6L396.5,715.6z"/>
+	<path fill="#212121" d="M64.2,769.8c-29.9,0-54.2-24.3-54.2-54.2l0-654.9C10,30.8,34.3,6.5,64.2,6.5l271.7,0
+		c29.9,0,54.2,24.3,54.2,54.2l0,654.9c0,29.9-24.3,54.2-54.2,54.2L64.2,769.8z"/>
+	<g>
+		<circle cx="197.6" cy="693.4" r="34.9"/>
+		<path opacity="0.25" fill="#FFFFFF" d="M195.4,728.3c-19.3,0-34.9-15.6-34.9-34.9s15.6-34.9,34.9-34.9L195.4,728.3z"/>
+	</g>
+	<g>
+		<rect x="40.5" y="132.8" fill="#333333" width="319" height="479"/>
+		<path fill="#EEEEEE" d="M359,133.3v478H41v-478H359 M360,132.3H40v480h320V132.3L360,132.3z"/>
+	</g>
+	<g opacity="0.1">
+		<defs>
+			<path id="SVGID_1_" opacity="0.1" d="M64.2,769.8c-29.9,0-54.2-24.3-54.2-54.2l0-654.9C10,30.8,34.3,6.5,64.2,6.5l271.7,0
+				c29.9,0,54.2,24.3,54.2,54.2l0,654.9c0,29.9-24.3,54.2-54.2,54.2L64.2,769.8z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<polyline clip-path="url(#SVGID_2_)" fill="#FFFFFF" points="177.9,6.5 406.5,6.5 406.5,592.3 		"/>
+	</g>
+</g>
+<g id="angular_mobile">
+	<g>
+		<defs>
+			<rect id="SVGID_9_" x="40" y="132.3" width="320" height="480"/>
+		</defs>
+		<clipPath id="SVGID_3_">
+			<use xlink:href="#SVGID_9_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_3_)">
+			<image overflow="visible" width="320" height="480" xlink:href="mobile_concept.jpg"  transform="matrix(1 0 0 1 39.9997 132.2877)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>
