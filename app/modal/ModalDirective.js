@@ -17,11 +17,11 @@ modal.directive('modal', function($compile) {
 				var image;
 				
 				var titleElem = angular.element(
-					document.getElementsByClassName('title')
+					document.getElementsByClassName('title-wrapper')
 				);
 
 				var imgElem = angular.element(
-					document.getElementsByClassName('image')
+					document.getElementsByClassName('image-wrapper')
 				);
 
 				var appendContent = function() {

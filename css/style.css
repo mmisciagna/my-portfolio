@@ -343,9 +343,9 @@ modal {
       modal .gallery h3 span {
         color: #c1c1c1;
         display: block; }
-    modal .gallery .image {
+    modal .gallery .image-wrapper {
       padding: 0 24px; }
-      modal .gallery .image img {
+      modal .gallery .image-wrapper img {
         max-height: 512px;
         max-width: 100%; }
 
